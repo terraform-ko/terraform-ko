@@ -1,0 +1,217 @@
+:root {
+  --nextra-navbar-height: 76px;
+}
+
+.tf-topnav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.tf-topnav-row1 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 1.5rem;
+  background: #050505;
+  font-size: 0.78rem;
+}
+
+.tf-topnav-brand {
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.tf-topnav-brand span {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.tf-topnav-row1-note {
+  opacity: 0.5;
+}
+
+.tf-topnav-row2 {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.65rem 1.5rem;
+  background: var(--nextra-bg, #111);
+  border-bottom: 1px solid rgba(120, 120, 130, 0.2);
+}
+
+.tf-topnav-product {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 1rem;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.tf-topnav-product svg {
+  color: #9d6fd8;
+}
+
+.tf-topnav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.88rem;
+}
+
+.tf-topnav-links a {
+  color: inherit !important;
+  text-decoration: none !important;
+  opacity: 0.75;
+}
+
+.tf-topnav-links a:hover {
+  opacity: 1;
+}
+
+.tf-topnav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+  font-size: 0.88rem;
+}
+
+.tf-topnav-outline-btn {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  padding: 0.4rem 0.85rem;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.tf-topnav-outline-btn:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.tf-topnav-cta {
+  background: #7b42bc;
+  color: #fff !important;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.tf-topnav-cta:hover {
+  background: #6935a3;
+}
+
+.tf-hero {
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  margin: 1rem 0 2rem;
+  background:
+    repeating-linear-gradient(
+      115deg,
+      transparent 0 22px,
+      rgba(157, 111, 216, 0.12) 22px 24px
+    ),
+    linear-gradient(135deg, #150f22 0%, #241a3d 45%, #3d2266 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.tf-hero h1 {
+  color: #fff;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin: 0 0 0.75rem;
+  border: none;
+}
+
+.tf-hero p {
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 40rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.tf-cta-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.tf-cta-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  color: #fff !important;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.tf-cta-row a:hover {
+  background: rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.tf-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.tf-card {
+  border: 1px solid var(--x-color-neutral-400, rgba(120, 120, 130, 0.25));
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.tf-card:hover {
+  border-color: #7b42bc;
+  transform: translateY(-2px);
+}
+
+.tf-card strong {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tf-card span {
+  font-size: 0.87rem;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+.tf-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(123, 66, 188, 0.15);
+  color: #9d6fd8;
+}
+
+.tf-badge-muted {
+  background: rgba(120, 120, 130, 0.18);
+  color: var(--nextra-text-muted, #8a8a94);
+}

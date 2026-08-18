@@ -1,0 +1,20 @@
+export default {
+  "index": "Overview",
+  "create": "Create Workspaces",
+  "tags": "Create tags",
+  "browse": "Browse workspaces",
+  "explorer": "Explorer",
+  "change-requests": "Change requests",
+  "configurations": "Terraform Configurations",
+  "health": "Health",
+  "settings": "Settings",
+  "state": "Terraform State",
+  "json-filtering": "JSON Filtering",
+  "no-code-provisioning": "No-Code Provisioning",
+  "import": "Import existing resources",
+  "run": "Terraform Runs",
+  "transfer": "Transfer Workspaces",
+  "best-practices": "Best Practices",
+  "policy-enforcement": "Policy enforcement",
+  "cost-estimation": "Cost Estimation"
+}

@@ -1,0 +1,1963 @@
+# Official Terraform docs structure audit
+
+Generated from HashiCorp's own sidebar navigation data (`origin/**/data/*-nav-data.json`,
+synced from `hashicorp/web-unified-docs`), cross-checked against what actually exists
+under `origin/` and `src/content/`. This is the ground truth this site's structure is
+built from — regenerate with `node scripts/audit-structure.mjs` after re-syncing origin/.
+
+## cli
+
+- origin: `origin/terraform/docs/cli`
+- content: `src/content/cli`
+- nav-data: `origin/terraform/data/cli-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- **Terraform CLI**
+- Overview `(index)`
+- Basic CLI Features _(internal → `commands`: /cli/commands)_
+- 📁 Initializing Working Directories
+  - Overview `init`
+  - init _(internal → `commands/init`: /cli/commands/init)_
+  - get _(internal → `commands/get`: /cli/commands/get)_
+- 📁 Provisioning Infrastructure
+  - Overview `run`
+  - plan _(internal → `commands/plan`: /cli/commands/plan)_
+  - apply _(internal → `commands/apply`: /cli/commands/apply)_
+  - destroy _(internal → `commands/destroy`: /cli/commands/destroy)_
+- 📁 Authenticating
+  - Overview `auth`
+  - login _(internal → `commands/login`: /cli/commands/login)_
+  - logout _(internal → `commands/logout`: /cli/commands/logout)_
+- 📁 Writing and Modifying Code
+  - Overview `code`
+  - console _(internal → `commands/console`: /cli/commands/console)_
+  - fmt _(internal → `commands/fmt`: /cli/commands/fmt)_
+  - validate _(internal → `commands/validate`: /cli/commands/validate)_
+- 📁 Inspecting Infrastructure
+  - Overview `inspect`
+  - graph _(internal → `commands/graph`: /cli/commands/graph)_
+  - output _(internal → `commands/output`: /cli/commands/output)_
+  - show _(internal → `commands/show`: /cli/commands/show)_
+  - state list _(internal → `commands/state/list`: /cli/commands/state/list)_
+  - state show _(internal → `commands/state/show`: /cli/commands/state/show)_
+- 📁 Import Infrastructure
+  - Overview `import`
+  - Import existing resources `import/usage`
+  - import command reference _(internal → `commands/import`: /cli/commands/import)_
+  - query command reference _(internal → `commands/query`: /cli/commands/query)_
+- 📁 Manually Update State
+  - Overview `state`
+  - Resource Addressing `state/resource-addressing`
+  - state _(internal → `commands/state`: /cli/commands/state)_
+  - 📁 Inspecting State
+    - Overview `state/inspect`
+    - state list _(internal → `commands/state/list`: /cli/commands/state/list)_
+    - state show _(internal → `commands/state/show`: /cli/commands/state/show)_
+    - refresh _(internal → `commands/refresh`: /cli/commands/refresh)_
+  - 📁 Forcing Re-creation (Tainting)
+    - Overview `state/taint`
+    - taint _(internal → `commands/taint`: /cli/commands/taint)_
+    - untaint _(internal → `commands/untaint`: /cli/commands/untaint)_
+  - 📁 Moving Resources
+    - Overview `state/move`
+    - state mv _(internal → `commands/state/mv`: /cli/commands/state/mv)_
+    - state rm _(internal → `commands/state/rm`: /cli/commands/state/rm)_
+    - state replace-provider _(internal → `commands/state/replace-provider`: /cli/commands/state/replace-provider)_
+  - 📁 Disaster Recovery
+    - Overview `state/recover`
+    - state pull _(internal → `commands/state/pull`: /cli/commands/state/pull)_
+    - state push _(internal → `commands/state/push`: /cli/commands/state/push)_
+    - force-unlock _(internal → `commands/force-unlock`: /cli/commands/force-unlock)_
+- 📁 Manage Stacks _(no matching folder)_
+  - Overview _(internal → `commands/stacks`: /cli/commands/stacks)_
+  - Global Flags _(internal → `commands/stacks/global-flags`: /cli/commands/stacks/global-flags)_
+  - create _(internal → `commands/stacks/create`: /cli/commands/stacks/create)_
+  - diagnostics _(internal → `commands/stacks/diagnostics`: /cli/commands/stacks/diagnostics)_
+  - fmt _(internal → `commands/stacks/fmt`: /cli/commands/stacks/fmt)_
+  - init _(internal → `commands/stacks/init`: /cli/commands/stacks/init)_
+  - list _(internal → `commands/stacks/list`: /cli/commands/stacks/list)_
+  - providers-lock _(internal → `commands/stacks/providers-lock`: /cli/commands/stacks/providers-lock)_
+  - validate _(internal → `commands/stacks/validate`: /cli/commands/stacks/validate)_
+  - version _(internal → `commands/stacks/version`: /cli/commands/stacks/version)_
+  - 📁 Configuration _(no matching folder)_
+    - Overview _(internal → `commands/stacks/configuration`: /cli/commands/stacks/configuration)_
+    - configuration fetch _(internal → `commands/stacks/configuration/fetch`: /cli/commands/stacks/configuration/fetch)_
+    - configuration list _(internal → `commands/stacks/configuration/list`: /cli/commands/stacks/configuration/list)_
+    - configuration upload _(internal → `commands/stacks/configuration/upload`: /cli/commands/stacks/configuration/upload)_
+    - configuration watch _(internal → `commands/stacks/configuration/watch`: /cli/commands/stacks/configuration/watch)_
+  - 📁 Deployment Group _(no matching folder)_
+    - Overview _(internal → `commands/stacks/deployment-group`: /cli/commands/stacks/deployment-group)_
+    - deployment-group approve-all-plans _(internal → `commands/stacks/deployment-group/approve-all-plans`: /cli/commands/stacks/deployment-group/approve-all-plans)_
+    - deployment-group list _(internal → `commands/stacks/deployment-group/list`: /cli/commands/stacks/deployment-group/list)_
+    - deployment-group rerun _(internal → `commands/stacks/deployment-group/rerun`: /cli/commands/stacks/deployment-group/rerun)_
+    - deployment-group watch _(internal → `commands/stacks/deployment-group/watch`: /cli/commands/stacks/deployment-group/watch)_
+  - 📁 Deployment Run _(no matching folder)_
+    - Overview _(internal → `commands/stacks/deployment-run`: /cli/commands/stacks/deployment-run)_
+    - deployment-run approve-all-plans _(internal → `commands/stacks/deployment-run/approve-all-plans`: /cli/commands/stacks/deployment-run/approve-all-plans)_
+    - deployment-run cancel _(internal → `commands/stacks/deployment-run/cancel`: /cli/commands/stacks/deployment-run/cancel)_
+    - deployment-run list _(internal → `commands/stacks/deployment-run/list`: /cli/commands/stacks/deployment-run/list)_
+    - deployment-run watch _(internal → `commands/stacks/deployment-run/watch`: /cli/commands/stacks/deployment-run/watch)_
+  - 📁 Migrate _(no matching folder)_
+    - Overview _(internal → `commands/stacks/migrate`: /cli/commands/stacks/migrate)_
+    - migrate prepare-manifest _(internal → `commands/stacks/migrate/prepare-manifest`: /cli/commands/stacks/migrate/prepare-manifest)_
+    - migrate translate-config _(internal → `commands/stacks/migrate/translate-config`: /cli/commands/stacks/migrate/translate-config)_
+    - migrate translate-state _(internal → `commands/stacks/migrate/translate-state`: /cli/commands/stacks/migrate/translate-state)_
+    - migrate validate-manifest _(internal → `commands/stacks/migrate/validate-manifest`: /cli/commands/stacks/migrate/validate-manifest)_
+- 📁 Managing Workspaces
+  - Overview `workspaces`
+  - 📁 workspace _(no matching folder)_
+    - Overview _(internal → `commands/workspace`: /cli/commands/workspace)_
+    - workspace list _(internal → `commands/workspace/list`: /cli/commands/workspace/list)_
+    - workspace select _(internal → `commands/workspace/select`: /cli/commands/workspace/select)_
+    - workspace new _(internal → `commands/workspace/new`: /cli/commands/workspace/new)_
+    - workspace delete _(internal → `commands/workspace/delete`: /cli/commands/workspace/delete)_
+    - workspace show _(internal → `commands/workspace/show`: /cli/commands/workspace/show)_
+- 📁 Managing Plugins
+  - Overview `plugins`
+  - Plugin Signing `plugins/signing`
+  - providers _(internal → `commands/providers`: /cli/commands/providers)_
+  - version _(internal → `commands/version`: /cli/commands/version)_
+  - providers lock _(internal → `commands/providers/lock`: /cli/commands/providers/lock)_
+  - providers mirror _(internal → `commands/providers/mirror`: /cli/commands/providers/mirror)_
+  - providers schema _(internal → `commands/providers/schema`: /cli/commands/providers/schema)_
+- 📁 CLI Configuration
+  - Overview `config`
+  - CLI Configuration `config/config-file`
+  - Environment Variables `config/environment-variables`
+- 📁 Using HCP Terraform
+  - Overview `cloud`
+  - Connect to HCP Terraform `cloud/settings`
+  - Command Line Arguments `cloud/command-line-arguments`
+- 📁 Testing Terraform
+  - Overview `test`
+  - test _(internal → `commands/test`: /cli/commands/test)_
+- 📁 Automating Terraform _(no matching folder)_
+  - Running Terraform in Automation _(external: https://learn.hashicorp.com/tutorials/terraform/automate-terraform?in=terraform/automation&utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS)_
+  - GitHub Actions _(external: https://learn.hashicorp.com/tutorials/terraform/github-actions?utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS)_
+- 📁 Alphabetical List of Commands _(no matching folder)_
+  - Overview _(internal → `commands`: /cli/commands)_
+  - apply _(internal → `commands/apply`: /cli/commands/apply)_
+  - console _(internal → `commands/console`: /cli/commands/console)_
+  - destroy _(internal → `commands/destroy`: /cli/commands/destroy)_
+  - fmt _(internal → `commands/fmt`: /cli/commands/fmt)_
+  - force-unlock _(internal → `commands/force-unlock`: /cli/commands/force-unlock)_
+  - get _(internal → `commands/get`: /cli/commands/get)_
+  - graph _(internal → `commands/graph`: /cli/commands/graph)_
+  - import _(internal → `commands/import`: /cli/commands/import)_
+  - init _(internal → `commands/init`: /cli/commands/init)_
+  - login _(internal → `commands/login`: /cli/commands/login)_
+  - logout _(internal → `commands/logout`: /cli/commands/logout)_
+  - modules _(internal → `commands/modules`: /cli/commands/modules)_
+  - output _(internal → `commands/output`: /cli/commands/output)_
+  - plan _(internal → `commands/plan`: /cli/commands/plan)_
+  - providers _(internal → `commands/providers`: /cli/commands/providers)_
+  - providers lock _(internal → `commands/providers/lock`: /cli/commands/providers/lock)_
+  - providers mirror _(internal → `commands/providers/mirror`: /cli/commands/providers/mirror)_
+  - providers schema _(internal → `commands/providers/schema`: /cli/commands/providers/schema)_
+  - query _(internal → `commands/query`: /cli/commands/query)_
+  - refresh _(internal → `commands/refresh`: /cli/commands/refresh)_
+  - show _(internal → `commands/show`: /cli/commands/show)_
+  - state _(internal → `commands/state`: /cli/commands/state)_
+  - state list _(internal → `commands/state/list`: /cli/commands/state/list)_
+  - state mv _(internal → `commands/state/mv`: /cli/commands/state/mv)_
+  - state pull _(internal → `commands/state/pull`: /cli/commands/state/pull)_
+  - state push _(internal → `commands/state/push`: /cli/commands/state/push)_
+  - state replace-provider _(internal → `commands/state/replace-provider`: /cli/commands/state/replace-provider)_
+  - state rm _(internal → `commands/state/rm`: /cli/commands/state/rm)_
+  - state show _(internal → `commands/state/show`: /cli/commands/state/show)_
+  - taint _(internal → `commands/taint`: /cli/commands/taint)_
+  - test _(internal → `commands/test`: /cli/commands/test)_
+  - untaint _(internal → `commands/untaint`: /cli/commands/untaint)_
+  - validate _(internal → `commands/validate`: /cli/commands/validate)_
+  - version _(internal → `commands/version`: /cli/commands/version)_
+  - workspace _(internal → `commands/workspace`: /cli/commands/workspace)_
+  - workspace list _(internal → `commands/workspace/list`: /cli/commands/workspace/list)_
+  - workspace select _(internal → `commands/workspace/select`: /cli/commands/workspace/select)_
+  - workspace new _(internal → `commands/workspace/new`: /cli/commands/workspace/new)_
+  - workspace delete _(internal → `commands/workspace/delete`: /cli/commands/workspace/delete)_
+  - workspace show _(internal → `commands/workspace/show`: /cli/commands/workspace/show)_
+  - 0.12upgrade _(internal → `commands/0.12upgrade`: /cli/commands/0.12upgrade)_
+  - 0.13upgrade _(internal → `commands/0.13upgrade`: /cli/commands/0.13upgrade)_
+- 📁 Alphabetical list of commands
+  - Overview `commands`
+  - apply `commands/apply`
+  - console `commands/console`
+  - destroy `commands/destroy`
+  - fmt `commands/fmt`
+  - force-unlock `commands/force-unlock`
+  - get `commands/get`
+  - graph `commands/graph`
+  - import `commands/import`
+  - init `commands/init`
+  - login `commands/login`
+  - logout `commands/logout`
+  - modules `commands/modules`
+  - output `commands/output`
+  - plan `commands/plan`
+  - 📁 providers
+    - providers `commands/providers`
+    - providers lock `commands/providers/lock`
+    - providers mirror `commands/providers/mirror`
+    - providers schema `commands/providers/schema`
+  - query `commands/query`
+  - refresh `commands/refresh`
+  - show `commands/show`
+  - 📁 state
+    - state `commands/state`
+    - state list `commands/state/list`
+    - state mv `commands/state/mv`
+    - state pull `commands/state/pull`
+    - state push `commands/state/push`
+    - state replace-provider `commands/state/replace-provider`
+    - state rm `commands/state/rm`
+    - state show `commands/state/show`
+  - taint `commands/taint`
+  - test `commands/test`
+  - untaint `commands/untaint`
+  - validate `commands/validate`
+  - version `commands/version`
+  - 📁 workspace
+    - workspace `commands/workspace`
+    - workspace list `commands/workspace/list`
+    - workspace select `commands/workspace/select`
+    - workspace new `commands/workspace/new`
+    - workspace delete `commands/workspace/delete`
+    - workspace show `commands/workspace/show`
+  - 0.12upgrade `commands/0.12upgrade`
+  - 0.13upgrade `commands/0.13upgrade`
+- ---
+- Terraform Internals _(external: /internals)_
+
+</details>
+
+## internals
+
+- origin: `origin/terraform/docs/internals`
+- content: `src/content/internals`
+- nav-data: `origin/terraform/data/internals-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- **Terraform Internals**
+- Overview `(index)`
+- Credentials Helpers `credentials-helpers`
+- Debugging Terraform `debugging`
+- Module Registry Protocol `module-registry-protocol`
+- Provider Network Mirror Protocol `provider-network-mirror-protocol`
+- Provider Registry Protocol `provider-registry-protocol`
+- Dependency Graph `graph`
+- Login Protocol `login-protocol`
+- JSON Output Format `json-format`
+- Remote Service Discovery `remote-service-discovery`
+- Provider Metadata `provider-meta`
+- Functions Metadata `functions-meta`
+- Machine Readable UI `machine-readable-ui`
+- Archiving `archiving`
+- ---
+- Terraform CLI _(external: /cli)_
+- ---
+- Configuration Language _(external: /language)_
+
+</details>
+
+## intro
+
+- origin: `origin/terraform/docs/intro`
+- content: `src/content/intro`
+- nav-data: `origin/terraform/data/intro-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- **Introduction to Terraform**
+- What is Terraform? `(index)`
+- Use Cases `use-cases`
+- Get Started _(external: https://learn.hashicorp.com/collections/terraform/aws-get-started)_
+- Terraform Editions `terraform-editions`
+- The Core Terraform Workflow `core-workflow`
+- 📁 Phases of Terraform Adoption
+  - Overview `phases`
+  - Adopt `phases/adopt`
+  - Collaborate `phases/collaborate`
+  - Scale `phases/scale`
+  - Govern `phases/govern`
+- 📁 Terraform vs. Alternatives
+  - Overview `vs`
+  - Chef, Puppet, etc. `vs/chef-puppet`
+  - CloudFormation, Heat, etc. `vs/cloudformation`
+  - Boto, Fog, etc. `vs/boto`
+  - Custom Solutions `vs/custom`
+- ---
+- **Documentation**
+- Configuration Language _(external: /terraform/language)_
+- Terraform CLI _(external: /terraform/cli)_
+- HCP Terraform _(external: /terraform/cloud-docs)_
+- Terraform Enterprise _(external: /terraform/enterprise)_
+
+</details>
+
+## language
+
+- origin: `origin/terraform/docs/language`
+- content: `src/content/language`
+- nav-data: `origin/terraform/data/language-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- Get started _(external: https://developer.hashicorp.com/terraform/tutorials)_
+- 📁 Configure providers
+  - Overview `providers`
+  - Provider requirements `providers/requirements`
+  - Dependency lock file _(internal → `files/dependency-lock`: /language/files/dependency-lock)_
+  - provider block reference `block/provider`
+  - terraform block reference `block/terraform`
+- 📁 Resources
+  - Overview `resources`
+  - Configure a resource `resources/configure`
+  - Destroy a resource `resources/destroy`
+  - resource block reference `block/resource`
+- 📁 Data sources _(no matching folder)_
+  - Query infrastructure data `data-sources`
+  - data block reference `block/data`
+- 📁 Variables _(no matching folder)_
+  - Use variables `values/variables`
+  - variable block reference `block/variable`
+- 📁 Locals _(no matching folder)_
+  - Use locals `values/locals`
+  - locals block reference `block/locals`
+- 📁 Outputs _(no matching folder)_
+  - Use outputs `values/outputs`
+  - output block reference `block/output`
+- 📁 Modules
+  - Overview `modules`
+  - Use modules `modules/configuration`
+  - 📁 Develop modules
+    - Overview `modules/develop`
+    - Standard module structure `modules/develop/structure`
+    - Providers within modules `modules/develop/providers`
+    - Best practices for composing modules `modules/develop/composition`
+    - Publish modules `modules/develop/publish`
+    - Refactor modules `modules/develop/refactoring`
+  - module block reference `block/module`
+- Meta-arguments `meta-arguments`
+- 📁 Sensitive data
+  - Manage sensitive data `manage-sensitive-data`
+  - Use temporary write-only arguments `manage-sensitive-data/write-only`
+  - Ephemeral values in resources `manage-sensitive-data/ephemeral`
+  - ephemeral block reference `block/ephemeral`
+- 📁 Backends
+  - Configure a backend `backend`
+  - local `backend/local`
+  - remote `backend/remote`
+  - azurerm `backend/azurerm`
+  - consul `backend/consul`
+  - cos `backend/cos`
+  - gcs `backend/gcs`
+  - http `backend/http`
+  - Kubernetes `backend/kubernetes`
+  - oci `backend/oci`
+  - oss `backend/oss`
+  - pg `backend/pg`
+  - s3 `backend/s3`
+- 📁 Search and import
+  - Overview `import`
+  - Import resources in bulk `import/bulk`
+  - Import a single resource `import/single-resource`
+  - Generate configuration for single imports `import/generating-configuration`
+  - import block reference `block/import`
+  - list block reference `block/tfquery/list`
+- 📁 State
+  - Overview `state`
+  - Purpose `state/purpose`
+  - Manage state in remote backends `state/backends`
+  - Refactor state `state/refactor`
+  - Remove a resource from state `state/remove`
+  - Locking `state/locking`
+  - Workspaces `state/workspaces`
+  - Remote state `state/remote`
+  - removed block reference `block/removed`
+  - moved block reference `block/moved`
+- 📁 Stacks
+  - Overview `stacks`
+  - Update from beta to general availability `stacks/update-GA`
+  - Use cases `stacks/use-cases`
+  - Design a Stack `stacks/design`
+  - 📁 Create a Stack
+    - Define configuration `stacks/component/config`
+    - Declare providers `stacks/component/declare-providers`
+  - 📁 Define deployments
+    - Define configuration `stacks/deploy/config`
+    - Set conditions for deployment runs `stacks/deploy/conditions`
+    - Authenticate a Stack `stacks/deploy/authenticate`
+    - Pass data from one Stack to another `stacks/deploy/pass-data`
+  - Manage components `stacks/component/manage`
+- 📁 Test and validate _(no matching folder)_
+  - Validate your configuration `validate`
+  - 📁 Test your configuration
+    - Overview `tests`
+    - Mocks `tests/mocking`
+  - check block reference `block/check`
+- 📁 Extend CRUD operations _(no matching folder)_
+  - Invoke actions `invoke-actions`
+  - Post-apply operations `post-apply-operations`
+  - Provisioners `provisioners`
+  - action block reference `block/action`
+- ---
+- **UPGRADE**
+- Upgrade to v1.14 `upgrade-guides`
+- v1.x compatibility promises `v1-compatibility-promises`
+- ---
+- **REFERENCE**
+- Style guide `style`
+- 📁 Syntax _(no matching folder)_
+  - Overview `syntax`
+  - Configuration syntax `syntax/configuration`
+  - JSON configuration syntax `syntax/json`
+  - Attributes as blocks `attr-as-blocks`
+- 📁 Files and configuration structure
+  - Overview `files`
+  - Override files `files/override`
+  - Dependency lock file `files/dependency-lock`
+  - Test files `files/tests`
+  - Query files `files/tfquery`
+  - Stack files `files/stack`
+- 📁 Configuration blocks
+  - action `block/action`
+  - check `block/check`
+  - data `block/data`
+  - ephemeral `block/ephemeral`
+  - import `block/import`
+  - locals `block/locals`
+  - module `block/module`
+  - moved `block/moved`
+  - output `block/output`
+  - provider `block/provider`
+  - removed `block/removed`
+  - resource `block/resource`
+  - terraform `block/terraform`
+  - variable `block/variable`
+- 📁 Stack blocks
+  - 📁 Component configuration
+    - Overview `block/stack/tfcomponent`
+    - component `block/stack/tfcomponent/component`
+    - stack `block/stack/tfcomponent/stack`
+    - required_providers `block/stack/tfcomponent/required_providers`
+    - provider `block/stack/tfcomponent/provider`
+    - variable `block/stack/tfcomponent/variable`
+    - output `block/stack/tfcomponent/output`
+    - removed `block/stack/tfcomponent/removed`
+    - locals _(internal → `block/locals`: block/locals)_
+  - 📁 Deployment configuration
+    - Overview `block/stack/tfdeploy`
+    - deployment `block/stack/tfdeploy/deployment`
+    - deployment_group `block/stack/tfdeploy/deployment_group`
+    - deployment_auto_approve `block/stack/tfdeploy/deployment_auto_approve`
+    - identity_token `block/stack/tfdeploy/identity_token`
+    - store `block/stack/tfdeploy/store`
+    - publish_output `block/stack/tfdeploy/publish_output`
+    - upstream_input `block/stack/tfdeploy/upstream_input`
+    - locals _(internal → `block/locals`: block/locals)_
+- 📁 Query blocks
+  - list `block/tfquery/list`
+  - locals _(internal → `block/locals`: /language/block/locals)_
+  - provider _(internal → `block/provider`: /language/block/provider)_
+  - variable _(internal → `block/variable`: /language/block/variable)_
+- 📁 Meta-arguments
+  - Overview `meta-arguments`
+  - count `meta-arguments/count`
+  - depends_on `meta-arguments/depends_on`
+  - for_each `meta-arguments/for_each`
+  - lifecycle `meta-arguments/lifecycle`
+  - provider `meta-arguments/provider`
+  - providers `meta-arguments/providers`
+- 📁 Built-in resources _(no matching folder)_
+  - terraform_data resource reference `resources/terraform-data`
+  - The terraform_remote_state data source `state/remote-state-data`
+- 📁 Expressions
+  - Overview `expressions`
+  - Types and values `expressions/types`
+  - Strings and templates `expressions/strings`
+  - References to values `expressions/references`
+  - Operators `expressions/operators`
+  - Function calls `expressions/function-calls`
+  - Conditional expressions `expressions/conditionals`
+  - For expressions `expressions/for`
+  - Splat expressions `expressions/splat`
+  - Dynamic blocks `expressions/dynamic-blocks`
+  - Type constraints `expressions/type-constraints`
+  - Version constraints `expressions/version-constraints`
+- 📁 Functions
+  - Overview `functions`
+  - 📁 Numeric functions _(no matching folder)_
+    - abs _(internal → `functions/abs`: /language/functions/abs)_
+    - ceil _(internal → `functions/ceil`: /language/functions/ceil)_
+    - floor _(internal → `functions/floor`: /language/functions/floor)_
+    - log _(internal → `functions/log`: /language/functions/log)_
+    - max _(internal → `functions/max`: /language/functions/max)_
+    - min _(internal → `functions/min`: /language/functions/min)_
+    - parseint _(internal → `functions/parseint`: /language/functions/parseint)_
+    - pow _(internal → `functions/pow`: /language/functions/pow)_
+    - signum _(internal → `functions/signum`: /language/functions/signum)_
+  - 📁 String functions _(no matching folder)_
+    - chomp _(internal → `functions/chomp`: /language/functions/chomp)_
+    - endswith _(internal → `functions/endswith`: /language/functions/endswith)_
+    - format _(internal → `functions/format`: /language/functions/format)_
+    - formatlist _(internal → `functions/formatlist`: /language/functions/formatlist)_
+    - indent _(internal → `functions/indent`: /language/functions/indent)_
+    - join _(internal → `functions/join`: /language/functions/join)_
+    - lower _(internal → `functions/lower`: /language/functions/lower)_
+    - regex _(internal → `functions/regex`: /language/functions/regex)_
+    - regexall _(internal → `functions/regexall`: /language/functions/regexall)_
+    - replace _(internal → `functions/replace`: /language/functions/replace)_
+    - split _(internal → `functions/split`: /language/functions/split)_
+    - startswith _(internal → `functions/startswith`: /language/functions/startswith)_
+    - strcontains _(internal → `functions/strcontains`: /language/functions/strcontains)_
+    - strrev _(internal → `functions/strrev`: /language/functions/strrev)_
+    - substr _(internal → `functions/substr`: /language/functions/substr)_
+    - templatestring _(internal → `functions/templatestring`: /language/functions/templatestring)_
+    - title _(internal → `functions/title`: /language/functions/title)_
+    - trim _(internal → `functions/trim`: /language/functions/trim)_
+    - trimprefix _(internal → `functions/trimprefix`: /language/functions/trimprefix)_
+    - trimsuffix _(internal → `functions/trimsuffix`: /language/functions/trimsuffix)_
+    - trimspace _(internal → `functions/trimspace`: /language/functions/trimspace)_
+    - upper _(internal → `functions/upper`: /language/functions/upper)_
+  - 📁 Collection functions _(no matching folder)_
+    - alltrue _(internal → `functions/alltrue`: /language/functions/alltrue)_
+    - anytrue _(internal → `functions/anytrue`: /language/functions/anytrue)_
+    - chunklist _(internal → `functions/chunklist`: /language/functions/chunklist)_
+    - coalesce _(internal → `functions/coalesce`: /language/functions/coalesce)_
+    - coalescelist _(internal → `functions/coalescelist`: /language/functions/coalescelist)_
+    - compact _(internal → `functions/compact`: /language/functions/compact)_
+    - concat _(internal → `functions/concat`: /language/functions/concat)_
+    - contains _(internal → `functions/contains`: /language/functions/contains)_
+    - distinct _(internal → `functions/distinct`: /language/functions/distinct)_
+    - element _(internal → `functions/element`: /language/functions/element)_
+    - flatten _(internal → `functions/flatten`: /language/functions/flatten)_
+    - index _(internal → `functions/index_function`: /language/functions/index_function)_
+    - keys _(internal → `functions/keys`: /language/functions/keys)_
+    - length _(internal → `functions/length`: /language/functions/length)_
+    - list _(internal → `functions/list`: /language/functions/list)_
+    - lookup _(internal → `functions/lookup`: /language/functions/lookup)_
+    - map _(internal → `functions/map`: /language/functions/map)_
+    - matchkeys _(internal → `functions/matchkeys`: /language/functions/matchkeys)_
+    - merge _(internal → `functions/merge`: /language/functions/merge)_
+    - one _(internal → `functions/one`: /language/functions/one)_
+    - range _(internal → `functions/range`: /language/functions/range)_
+    - reverse _(internal → `functions/reverse`: /language/functions/reverse)_
+    - setintersection _(internal → `functions/setintersection`: /language/functions/setintersection)_
+    - setproduct _(internal → `functions/setproduct`: /language/functions/setproduct)_
+    - setsubtract _(internal → `functions/setsubtract`: /language/functions/setsubtract)_
+    - setunion _(internal → `functions/setunion`: /language/functions/setunion)_
+    - slice _(internal → `functions/slice`: /language/functions/slice)_
+    - sort _(internal → `functions/sort`: /language/functions/sort)_
+    - sum _(internal → `functions/sum`: /language/functions/sum)_
+    - transpose _(internal → `functions/transpose`: /language/functions/transpose)_
+    - values _(internal → `functions/values`: /language/functions/values)_
+    - zipmap _(internal → `functions/zipmap`: /language/functions/zipmap)_
+  - 📁 Encoding functions _(no matching folder)_
+    - base64decode _(internal → `functions/base64decode`: /language/functions/base64decode)_
+    - base64encode _(internal → `functions/base64encode`: /language/functions/base64encode)_
+    - base64gzip _(internal → `functions/base64gzip`: /language/functions/base64gzip)_
+    - csvdecode _(internal → `functions/csvdecode`: /language/functions/csvdecode)_
+    - jsondecode _(internal → `functions/jsondecode`: /language/functions/jsondecode)_
+    - jsonencode _(internal → `functions/jsonencode`: /language/functions/jsonencode)_
+    - textdecodebase64 _(internal → `functions/textdecodebase64`: /language/functions/textdecodebase64)_
+    - textencodebase64 _(internal → `functions/textencodebase64`: /language/functions/textencodebase64)_
+    - urlencode _(internal → `functions/urlencode`: /language/functions/urlencode)_
+    - yamldecode _(internal → `functions/yamldecode`: /language/functions/yamldecode)_
+    - yamlencode _(internal → `functions/yamlencode`: /language/functions/yamlencode)_
+  - 📁 Filesystem functions _(no matching folder)_
+    - abspath _(internal → `functions/abspath`: /language/functions/abspath)_
+    - dirname _(internal → `functions/dirname`: /language/functions/dirname)_
+    - pathexpand _(internal → `functions/pathexpand`: /language/functions/pathexpand)_
+    - basename _(internal → `functions/basename`: /language/functions/basename)_
+    - file _(internal → `functions/file`: /language/functions/file)_
+    - fileexists _(internal → `functions/fileexists`: /language/functions/fileexists)_
+    - fileset _(internal → `functions/fileset`: /language/functions/fileset)_
+    - filebase64 _(internal → `functions/filebase64`: /language/functions/filebase64)_
+    - templatefile _(internal → `functions/templatefile`: /language/functions/templatefile)_
+  - 📁 Date and time functions _(no matching folder)_
+    - formatdate _(internal → `functions/formatdate`: /language/functions/formatdate)_
+    - plantimestamp _(internal → `functions/plantimestamp`: /language/functions/plantimestamp)_
+    - timeadd _(internal → `functions/timeadd`: /language/functions/timeadd)_
+    - timecmp _(internal → `functions/timecmp`: /language/functions/timecmp)_
+    - timestamp _(internal → `functions/timestamp`: /language/functions/timestamp)_
+  - 📁 Hash and crypto functions _(no matching folder)_
+    - base64sha256 _(internal → `functions/base64sha256`: /language/functions/base64sha256)_
+    - base64sha512 _(internal → `functions/base64sha512`: /language/functions/base64sha512)_
+    - bcrypt _(internal → `functions/bcrypt`: /language/functions/bcrypt)_
+    - filebase64sha256 _(internal → `functions/filebase64sha256`: /language/functions/filebase64sha256)_
+    - filebase64sha512 _(internal → `functions/filebase64sha512`: /language/functions/filebase64sha512)_
+    - filemd5 _(internal → `functions/filemd5`: /language/functions/filemd5)_
+    - filesha1 _(internal → `functions/filesha1`: /language/functions/filesha1)_
+    - filesha256 _(internal → `functions/filesha256`: /language/functions/filesha256)_
+    - filesha512 _(internal → `functions/filesha512`: /language/functions/filesha512)_
+    - md5 _(internal → `functions/md5`: /language/functions/md5)_
+    - rsadecrypt _(internal → `functions/rsadecrypt`: /language/functions/rsadecrypt)_
+    - sha1 _(internal → `functions/sha1`: /language/functions/sha1)_
+    - sha256 _(internal → `functions/sha256`: /language/functions/sha256)_
+    - sha512 _(internal → `functions/sha512`: /language/functions/sha512)_
+    - uuid _(internal → `functions/uuid`: /language/functions/uuid)_
+    - uuidv5 _(internal → `functions/uuidv5`: /language/functions/uuidv5)_
+  - 📁 IP network functions _(no matching folder)_
+    - cidrhost _(internal → `functions/cidrhost`: /language/functions/cidrhost)_
+    - cidrnetmask _(internal → `functions/cidrnetmask`: /language/functions/cidrnetmask)_
+    - cidrsubnet _(internal → `functions/cidrsubnet`: /language/functions/cidrsubnet)_
+    - cidrsubnets _(internal → `functions/cidrsubnets`: /language/functions/cidrsubnets)_
+  - 📁 Type conversion functions _(no matching folder)_
+    - can _(internal → `functions/can`: /language/functions/can)_
+    - convert _(internal → `functions/convert`: /language/functions/convert)_
+    - ephemeralasnull _(internal → `functions/ephemeralasnull`: /language/functions/ephemeralasnull)_
+    - issensitive _(internal → `functions/issensitive`: /language/functions/issensitive)_
+    - nonsensitive _(internal → `functions/nonsensitive`: /language/functions/nonsensitive)_
+    - sensitive _(internal → `functions/sensitive`: /language/functions/sensitive)_
+    - tobool _(internal → `functions/tobool`: /language/functions/tobool)_
+    - tolist _(internal → `functions/tolist`: /language/functions/tolist)_
+    - tomap _(internal → `functions/tomap`: /language/functions/tomap)_
+    - tonumber _(internal → `functions/tonumber`: /language/functions/tonumber)_
+    - toset _(internal → `functions/toset`: /language/functions/toset)_
+    - tostring _(internal → `functions/tostring`: /language/functions/tostring)_
+    - try _(internal → `functions/try`: /language/functions/try)_
+    - type _(internal → `functions/type`: /language/functions/type)_
+  - 📁 Terraform-specific functions _(no matching folder)_
+    - provider::terraform::encode_tfvars _(internal → `functions/terraform-encode_tfvars`: /language/functions/terraform-encode_tfvars)_
+    - provider::terraform::decode_tfvars _(internal → `functions/terraform-decode_tfvars`: /language/functions/terraform-decode_tfvars)_
+    - provider::terraform::encode_expr _(internal → `functions/terraform-encode_expr`: /language/functions/terraform-encode_expr)_
+    - terraform.applying _(internal → `functions/terraform-applying`: /language/functions/terraform-applying)_
+  - abs `functions/abs`
+  - abspath `functions/abspath`
+  - alltrue `functions/alltrue`
+  - anytrue `functions/anytrue`
+  - base64decode `functions/base64decode`
+  - base64encode `functions/base64encode`
+  - base64gzip `functions/base64gzip`
+  - base64sha256 `functions/base64sha256`
+  - base64sha512 `functions/base64sha512`
+  - basename `functions/basename`
+  - bcrypt `functions/bcrypt`
+  - can `functions/can`
+  - ceil `functions/ceil`
+  - chomp `functions/chomp`
+  - chunklist `functions/chunklist`
+  - cidrhost `functions/cidrhost`
+  - cidrnetmask `functions/cidrnetmask`
+  - cidrsubnet `functions/cidrsubnet`
+  - cidrsubnets `functions/cidrsubnets`
+  - coalesce `functions/coalesce`
+  - coalescelist `functions/coalescelist`
+  - compact `functions/compact`
+  - concat `functions/concat`
+  - contains `functions/contains`
+  - csvdecode `functions/csvdecode`
+  - dirname `functions/dirname`
+  - distinct `functions/distinct`
+  - element `functions/element`
+  - endswith `functions/endswith`
+  - ephemeralasnull `functions/ephemeralasnull`
+  - file `functions/file`
+  - filebase64 `functions/filebase64`
+  - filebase64sha256 `functions/filebase64sha256`
+  - filebase64sha512 `functions/filebase64sha512`
+  - fileexists `functions/fileexists`
+  - filemd5 `functions/filemd5`
+  - fileset `functions/fileset`
+  - filesha1 `functions/filesha1`
+  - filesha256 `functions/filesha256`
+  - filesha512 `functions/filesha512`
+  - flatten `functions/flatten`
+  - floor `functions/floor`
+  - format `functions/format`
+  - formatdate `functions/formatdate`
+  - formatlist `functions/formatlist`
+  - indent `functions/indent`
+  - index `functions/index_function`
+  - issensitive `functions/issensitive`
+  - join `functions/join`
+  - jsondecode `functions/jsondecode`
+  - jsonencode `functions/jsonencode`
+  - keys `functions/keys`
+  - length `functions/length`
+  - list `functions/list`
+  - log `functions/log`
+  - lookup `functions/lookup`
+  - lower `functions/lower`
+  - map `functions/map`
+  - matchkeys `functions/matchkeys`
+  - max `functions/max`
+  - md5 `functions/md5`
+  - merge `functions/merge`
+  - min `functions/min`
+  - nonsensitive `functions/nonsensitive`
+  - one `functions/one`
+  - parseint `functions/parseint`
+  - pathexpand `functions/pathexpand`
+  - plantimestamp `functions/plantimestamp`
+  - pow `functions/pow`
+  - range `functions/range`
+  - regex `functions/regex`
+  - regexall `functions/regexall`
+  - replace `functions/replace`
+  - reverse `functions/reverse`
+  - rsadecrypt `functions/rsadecrypt`
+  - sensitive `functions/sensitive`
+  - setintersection `functions/setintersection`
+  - setproduct `functions/setproduct`
+  - setsubtract `functions/setsubtract`
+  - setunion `functions/setunion`
+  - sha1 `functions/sha1`
+  - sha256 `functions/sha256`
+  - sha512 `functions/sha512`
+  - signum `functions/signum`
+  - slice `functions/slice`
+  - sort `functions/sort`
+  - split `functions/split`
+  - startswith `functions/startswith`
+  - strcontains `functions/strcontains`
+  - strrev `functions/strrev`
+  - substr `functions/substr`
+  - sum `functions/sum`
+  - templatefile `functions/templatefile`
+  - templatestring `functions/templatestring`
+  - terraform.applying `functions/terraform-applying`
+  - terraform-encode_tfvars `functions/terraform-encode_tfvars`
+  - terraform-decode_tfvars `functions/terraform-decode_tfvars`
+  - terraform-encode_expr `functions/terraform-encode_expr`
+  - textdecodebase64 `functions/textdecodebase64`
+  - textencodebase64 `functions/textencodebase64`
+  - timeadd `functions/timeadd`
+  - timecmp `functions/timecmp`
+  - timestamp `functions/timestamp`
+  - title `functions/title`
+  - tobool `functions/tobool`
+  - tolist `functions/tolist`
+  - tomap `functions/tomap`
+  - tonumber `functions/tonumber`
+  - toset `functions/toset`
+  - tostring `functions/tostring`
+  - transpose `functions/transpose`
+  - trim `functions/trim`
+  - trimprefix `functions/trimprefix`
+  - trimspace `functions/trimspace`
+  - trimsuffix `functions/trimsuffix`
+  - try `functions/try`
+  - type `functions/type`
+  - upper `functions/upper`
+  - urlencode `functions/urlencode`
+  - uuid `functions/uuid`
+  - uuidv5 `functions/uuidv5`
+  - values `functions/values`
+  - yamldecode `functions/yamldecode`
+  - yamlencode `functions/yamlencode`
+  - zipmap `functions/zipmap`
+- Internals _(external: /internals)_
+
+</details>
+
+## cloud-docs
+
+- origin: `origin/terraform-docs-common/docs/cloud-docs`
+- content: `src/content/cloud-docs`
+- nav-data: `origin/terraform-docs-common/data/cloud-docs-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ❌ 1
+  - `agents`
+
+<details><summary>Full official sidebar tree</summary>
+
+- **HCP Terraform**
+- Overview `(index)`
+- 📁 Plans and features
+  - Overview `overview`
+  - Estimate HCP Terraform cost `overview/estimate-hcp-terraform-cost`
+  - Activate pay-as-you-go `overview/activate-payg`
+  - Activate HashiCorp flex `overview/activate-flex`
+- Get started _(external: https://learn.hashicorp.com/collections/terraform/cloud-get-started?utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS)_
+- Migrate to HCP Terraform `migrate`
+- Use HCP Terraform in Europe `europe`
+- 📁 Manage access and organizations
+  - Users `users-teams-organizations/users`
+  - 📁 Teams
+    - Overview `users-teams-organizations/teams`
+    - Manage teams `users-teams-organizations/teams/manage`
+    - Notifications `users-teams-organizations/teams/notifications`
+  - 📁 Organizations
+    - Overview `users-teams-organizations/organizations`
+    - Organization settings `users-teams-organizations/organizations/settings`
+    - Manage reserved tag keys `users-teams-organizations/organizations/manage-reserved-tags`
+    - VCS status checks `users-teams-organizations/organizations/vcs-status-checks`
+    - Automatically cancel plan-only runs `users-teams-organizations/organizations/vcs-speculative-plan-management`
+    - 📁 Public registry namespaces
+      - Overview `users-teams-organizations/organizations/public-namespace`
+      - Create or claim a namespace `users-teams-organizations/organizations/public-namespace/create_or_claim`
+      - Manage namespaces `users-teams-organizations/organizations/public-namespace/manage`
+      - Manage namespace artifacts `users-teams-organizations/organizations/public-namespace/artifacts`
+    - Collect metrics `users-teams-organizations/organizations/metrics`
+  - 📁 Set permissions
+    - Overview `users-teams-organizations/permissions`
+    - Set permissions `users-teams-organizations/permissions/set-permissions`
+    - Organization permissions `users-teams-organizations/permissions/organization`
+    - Project permissions `users-teams-organizations/permissions/project`
+    - Workspace permissions `users-teams-organizations/permissions/workspace`
+  - Two-factor authentication `users-teams-organizations/2fa`
+  - API tokens `users-teams-organizations/api-tokens`
+  - IP allowlists `users-teams-organizations/ip-allowlists`
+  - 📁 Single sign on
+    - Overview `users-teams-organizations/single-sign-on`
+    - Microsoft Entra ID `users-teams-organizations/single-sign-on/entra-id`
+    - Okta `users-teams-organizations/single-sign-on/okta`
+    - SAML `users-teams-organizations/single-sign-on/saml`
+    - Linking a user account `users-teams-organizations/single-sign-on/linking-user-account`
+    - Testing `users-teams-organizations/single-sign-on/testing`
+- 📁 Private registry
+  - Overview `registry`
+  - Add public providers and modules `registry/add`
+  - Publish private providers `registry/publish-providers`
+  - Publish private modules `registry/publish-modules`
+  - Publish a Stack `registry/publish-stack-configuration`
+  - 📁 Manage registry artifacts
+    - Module versions `registry/manage/module-versions`
+    - Tags `registry/manage/tags`
+  - 📁 Test modules
+    - Overview `registry/test`
+    - 📁 Dynamic credentials
+      - Overview `registry/test/dynamic-credentials`
+      - AWS configuration `registry/test/dynamic-credentials/aws`
+      - GCP configuration `registry/test/dynamic-credentials/gcp`
+      - Azure configuration `registry/test/dynamic-credentials/azure`
+      - Vault configuration `registry/test/dynamic-credentials/vault`
+  - Use artifacts from the registry `registry/using`
+  - Configuration designer `registry/design`
+- 📁 Scope access with projects
+  - Overview `projects`
+  - Manage projects `projects/manage`
+  - Notifications `projects/notifications`
+  - Best practices `projects/best-practices`
+- 📁 Connecting to VCS
+  - Overview `vcs`
+  - GitHub.com `vcs/github-app`
+  - GitHub.com (OAuth) `vcs/github`
+  - GitHub Enterprise `vcs/github-enterprise`
+  - GitLab.com `vcs/gitlab-com`
+  - GitLab EE and CE `vcs/gitlab-eece`
+  - Bitbucket cloud `vcs/bitbucket-cloud`
+  - Bitbucket data center `vcs/bitbucket-data-center`
+  - Azure DevOps services (OAuth) `vcs/azure-devops-services`
+  - Azure DevOps services (PAT) `vcs/azure-devops-services-pat`
+  - Azure DevOps server `vcs/azure-devops-server`
+  - Private VCS providers `vcs/private`
+  - Troubleshooting `vcs/troubleshooting`
+- Compare Stacks and workspaces `stack-workspace`
+- 📁 Use workspaces
+  - Overview `workspaces`
+  - 📁 Manage a workspace
+    - Create workspaces `workspaces/create`
+    - Create tags `workspaces/tags`
+    - Browse workspaces `workspaces/browse`
+    - Explorer `workspaces/explorer`
+    - 📁 Change requests
+      - Overview `workspaces/change-requests`
+      - Manage change requests `workspaces/change-requests/manage`
+  - 📁 Settings
+    - Overview `workspaces/settings`
+    - VCS connections `workspaces/settings/vcs`
+    - Access `workspaces/settings/access`
+    - Notifications `workspaces/settings/notifications`
+    - SSH keys for modules `workspaces/settings/ssh-keys`
+    - Run triggers `workspaces/settings/run-triggers`
+    - Run tasks `workspaces/settings/run-tasks`
+    - Destruction and deletion `workspaces/settings/deletion`
+  - Best practices `workspaces/best-practices`
+  - 📁 Configure variables _(no matching folder)_
+    - Overview _(internal → `variables`: variables)_
+    - Managing variables _(internal → `variables/managing-variables`: variables/managing-variables)_
+  - Health `workspaces/health`
+  - Terraform configurations `workspaces/configurations`
+  - Terraform state `workspaces/state`
+  - JSON filtering `workspaces/json-filtering`
+  - 📁 No-code provisioning
+    - Designing no-code ready modules `workspaces/no-code-provisioning/module-design`
+    - Provisioning no-code infrastructure `workspaces/no-code-provisioning/provisioning`
+  - Import existing resources `workspaces/import`
+  - 📁 Policy enforcement
+    - Overview `workspaces/policy-enforcement`
+    - 📁 Define policies
+      - Overview `workspaces/policy-enforcement/define-policies`
+      - Terraform policy `workspaces/policy-enforcement/define-policies/terraform-policy`
+      - Custom Sentinel policies `workspaces/policy-enforcement/define-policies/custom-sentinel`
+      - OPA policies `workspaces/policy-enforcement/define-policies/opa`
+    - 📁 Create and manage policy sets
+      - Overview `workspaces/policy-enforcement/manage-policy-sets`
+      - Create Terraform policy sets in VCS `workspaces/policy-enforcement/manage-policy-sets/terraform-policy-vcs`
+      - Create Sentinel policy sets in VCS `workspaces/policy-enforcement/manage-policy-sets/sentinel-vcs`
+      - Connect to OPA policies in VCS `workspaces/policy-enforcement/manage-policy-sets/opa-vcs`
+      - Configure a policy set connection `workspaces/policy-enforcement/manage-policy-sets/configure`
+    - Run pre-written Sentinel policies `workspaces/policy-enforcement/prewritten-sentinel`
+    - 📁 Test policies
+      - Overview `workspaces/policy-enforcement/test`
+      - Terraform policy `workspaces/policy-enforcement/test/terraform-policy`
+      - Sentinel `workspaces/policy-enforcement/test/sentinel`
+    - 📁 View policy results
+      - Overview `workspaces/policy-enforcement/view-results`
+      - View Sentinel JSON results `workspaces/policy-enforcement/view-results/json`
+    - Pre-written policy library `workspaces/policy-enforcement/prewritten-library`
+    - 📁 Sentinel import reference
+      - Overview `workspaces/policy-enforcement/import-reference`
+      - tfconfig `workspaces/policy-enforcement/import-reference/tfconfig`
+      - tfconfig/v2 `workspaces/policy-enforcement/import-reference/tfconfig-v2`
+      - tfplan `workspaces/policy-enforcement/import-reference/tfplan`
+      - tfplan/v2 `workspaces/policy-enforcement/import-reference/tfplan-v2`
+      - tfstate `workspaces/policy-enforcement/import-reference/tfstate`
+      - tfstate/v2 `workspaces/policy-enforcement/import-reference/tfstate-v2`
+      - tfrun `workspaces/policy-enforcement/import-reference/tfrun`
+  - 📁 Use dynamic provider credentials _(no matching folder)_
+    - Overview _(internal → `dynamic-provider-credentials`: dynamic-provider-credentials)_
+    - Workload identity tokens _(internal → `dynamic-provider-credentials/workload-identity-tokens`: dynamic-provider-credentials/workload-identity-tokens)_
+    - Vault configuration _(internal → `dynamic-provider-credentials/vault-configuration`: dynamic-provider-credentials/vault-configuration)_
+    - AWS configuration _(internal → `dynamic-provider-credentials/aws-configuration`: dynamic-provider-credentials/aws-configuration)_
+    - AWS quick setup _(internal → `dynamic-provider-credentials/aws-configuration/quick-setup`: dynamic-provider-credentials/aws-configuration/quick-setup)_
+    - GCP configuration _(internal → `dynamic-provider-credentials/gcp-configuration`: dynamic-provider-credentials/gcp-configuration)_
+    - Azure configuration _(internal → `dynamic-provider-credentials/azure-configuration`: dynamic-provider-credentials/azure-configuration)_
+    - Kubernetes configuration _(internal → `dynamic-provider-credentials/kubernetes-configuration`: dynamic-provider-credentials/kubernetes-configuration)_
+    - HCP configuration _(internal → `dynamic-provider-credentials/hcp-configuration`: dynamic-provider-credentials/hcp-configuration)_
+    - Manually generating workload identity tokens _(internal → `dynamic-provider-credentials/manual-generation`: dynamic-provider-credentials/manual-generation)_
+    - Specifying multiple configurations _(internal → `dynamic-provider-credentials/specifying-multiple-configurations`: dynamic-provider-credentials/specifying-multiple-configurations)_
+    - 📁 Vault-backed dynamic credentials _(no matching folder)_
+      - Overview _(internal → `dynamic-provider-credentials/vault-backed`: dynamic-provider-credentials/vault-backed)_
+      - AWS configuration _(internal → `dynamic-provider-credentials/vault-backed/aws-configuration`: dynamic-provider-credentials/vault-backed/aws-configuration)_
+      - GCP configuration _(internal → `dynamic-provider-credentials/vault-backed/gcp-configuration`: dynamic-provider-credentials/vault-backed/gcp-configuration)_
+      - Azure configuration _(internal → `dynamic-provider-credentials/vault-backed/azure-configuration`: dynamic-provider-credentials/vault-backed/azure-configuration)_
+  - 📁 Cost estimation
+    - Overview `workspaces/cost-estimation`
+    - AWS `workspaces/cost-estimation/aws`
+    - GCP `workspaces/cost-estimation/gcp`
+    - Azure `workspaces/cost-estimation/azure`
+  - 📁 Terraform runs
+    - Remote operations `workspaces/run/remote-operations`
+    - Viewing and managing runs `workspaces/run/manage`
+    - Run states and stages `workspaces/run/states`
+    - Run modes and options `workspaces/run/modes-and-options`
+    - UI/VCS-driven runs `workspaces/run/ui`
+    - API-driven runs `workspaces/run/api`
+    - CLI-driven runs `workspaces/run/cli`
+    - The run environment `workspaces/run/run-environment`
+    - Installing software `workspaces/run/install-software`
+  - 📁 Control state and plan file encryption
+    - Overview `hold-your-own-key`
+    - How hold your own key works `hold-your-own-key/concepts`
+    - Configure and manage keys `hold-your-own-key/configure`
+  - 📁 Integrations _(no matching folder)_
+    - Overview _(internal → `integrations`: integrations)_
+    - 📁 Kubernetes operator _(no matching folder)_
+      - Overview _(internal → `integrations/kubernetes`: integrations/kubernetes)_
+      - Setup _(internal → `integrations/kubernetes/setup`: integrations/kubernetes/setup)_
+      - API reference _(internal → `integrations/kubernetes/api-reference`: integrations/kubernetes/api-reference)_
+      - Annotations and labels _(internal → `integrations/kubernetes/annotations-and-labels`: integrations/kubernetes/annotations-and-labels)_
+      - Metrics _(internal → `integrations/kubernetes/metrics`: integrations/kubernetes/metrics)_
+      - Migration guide _(internal → `integrations/kubernetes/ops-v2-migration`: integrations/kubernetes/ops-v2-migration)_
+    - 📁 ServiceNow integrations _(no matching folder)_
+      - 📁 Service catalog for Terraform _(no matching folder)_
+        - Overview _(internal → `integrations/service-now/service-catalog-terraform`: integrations/service-now/service-catalog-terraform)_
+        - Service catalog _(internal → `integrations/service-now/service-catalog-terraform/service-catalog-config`: integrations/service-now/service-catalog-terraform/service-catalog-config)_
+        - Admin guide _(internal → `integrations/service-now/service-catalog-terraform/admin-guide`: integrations/service-now/service-catalog-terraform/admin-guide)_
+        - Developer reference _(internal → `integrations/service-now/service-catalog-terraform/developer-reference`: integrations/service-now/service-catalog-terraform/developer-reference)_
+        - Example customizations _(internal → `integrations/service-now/service-catalog-terraform/example-customizations`: integrations/service-now/service-catalog-terraform/example-customizations)_
+        - Troubleshoot _(internal → `integrations/service-now/service-catalog-terraform/troubleshoot`: integrations/service-now/service-catalog-terraform/troubleshoot)_
+      - 📁 Service graph connector for Terraform _(no matching folder)_
+        - Overview _(internal → `integrations/service-now/service-graph`: integrations/service-now/service-graph)_
+        - Setup _(internal → `integrations/service-now/service-graph/service-graph-setup`: integrations/service-now/service-graph/service-graph-setup)_
+        - 📁 Resource coverage _(no matching folder)_
+          - Overview _(internal → `integrations/service-now/service-graph/resource-coverage`: integrations/service-now/service-graph/resource-coverage)_
+          - AWS _(internal → `integrations/service-now/service-graph/resource-coverage/aws`: integrations/service-now/service-graph/resource-coverage/aws)_
+          - Azure _(internal → `integrations/service-now/service-graph/resource-coverage/azure`: integrations/service-now/service-graph/resource-coverage/azure)_
+          - GCP _(internal → `integrations/service-now/service-graph/resource-coverage/gcp`: integrations/service-now/service-graph/resource-coverage/gcp)_
+          - vSphere _(internal → `integrations/service-now/service-graph/resource-coverage/vsphere`: integrations/service-now/service-graph/resource-coverage/vsphere)_
+        - Customizations _(internal → `integrations/service-now/service-graph/customizations`: integrations/service-now/service-graph/customizations)_
+    - Splunk integration _(internal → `integrations/splunk`: integrations/splunk)_
+    - Run tasks integration _(internal → `integrations/run-tasks`: integrations/run-tasks)_
+    - AWS service catalog integration _(internal → `integrations/aws-service-catalog`: integrations/aws-service-catalog)_
+- 📁 Use Stacks
+  - Overview `stacks`
+  - 📁 Manage a Stack
+    - Create a Stack `stacks/create`
+    - Configure a Stack `stacks/configure`
+    - Destroy a Stack `stacks/destroy`
+  - Migrate to Stacks `stacks/migrate`
+  - State `stacks/state`
+  - Runs `stacks/runs`
+  - 📁 Deploy infrastructure
+    - Configuration versions `stacks/deploy/configuration-versions`
+    - Review deployment runs `stacks/deploy/runs`
+  - 📁 Configure variables _(no matching folder)_
+    - Overview _(internal → `variables`: variables)_
+    - Managing variables _(internal → `variables/managing-variables`: variables/managing-variables)_
+  - 📁 Use dynamic provider credentials _(no matching folder)_
+    - Overview _(internal → `dynamic-provider-credentials`: dynamic-provider-credentials)_
+    - Workload identity tokens _(internal → `dynamic-provider-credentials/workload-identity-tokens`: dynamic-provider-credentials/workload-identity-tokens)_
+    - Vault configuration _(internal → `dynamic-provider-credentials/vault-configuration`: dynamic-provider-credentials/vault-configuration)_
+    - AWS configuration _(internal → `dynamic-provider-credentials/aws-configuration`: dynamic-provider-credentials/aws-configuration)_
+    - GCP configuration _(internal → `dynamic-provider-credentials/gcp-configuration`: dynamic-provider-credentials/gcp-configuration)_
+    - Azure configuration _(internal → `dynamic-provider-credentials/azure-configuration`: dynamic-provider-credentials/azure-configuration)_
+    - Kubernetes configuration _(internal → `dynamic-provider-credentials/kubernetes-configuration`: dynamic-provider-credentials/kubernetes-configuration)_
+    - HCP configuration _(internal → `dynamic-provider-credentials/hcp-configuration`: dynamic-provider-credentials/hcp-configuration)_
+    - Manually generating workload identity tokens _(internal → `dynamic-provider-credentials/manual-generation`: dynamic-provider-credentials/manual-generation)_
+    - 📁 Vault-backed dynamic credentials _(no matching folder)_
+      - Overview _(internal → `dynamic-provider-credentials/vault-backed`: dynamic-provider-credentials/vault-backed)_
+      - AWS configuration _(internal → `dynamic-provider-credentials/vault-backed/aws-configuration`: dynamic-provider-credentials/vault-backed/aws-configuration)_
+      - GCP configuration _(internal → `dynamic-provider-credentials/vault-backed/gcp-configuration`: dynamic-provider-credentials/vault-backed/gcp-configuration)_
+      - Azure configuration _(internal → `dynamic-provider-credentials/vault-backed/azure-configuration`: dynamic-provider-credentials/vault-backed/azure-configuration)_
+    - 📁 HCP Vault secrets-backed dynamic credentials _(no matching folder)_
+      - Overview _(external: dynamic-provider-credentials/hcp-vault-secrets-backed)_
+      - AWS configuration _(external: dynamic-provider-credentials/hcp-vault-secrets-backed/aws-configuration)_
+      - GCP configuration _(external: dynamic-provider-credentials/hcp-vault-secrets-backed/gcp-configuration)_
+- Manage actions `actions`
+- 📁 Recommended practices
+  - Overview `recommended-practices`
+  - Part 1: Overview of our recommended workflow `recommended-practices/part1`
+  - Part 2: Evaluating your current provisioning practices `recommended-practices/part2`
+  - Part 3: How to evolve your provisioning practices `recommended-practices/part3`
+  - Part 3.1: From manual changes to semi-automation `recommended-practices/part3.1`
+  - Part 3.2: From semi-automation to infrastructure as code `recommended-practices/part3.2`
+  - Part 3.3: From infrastructure as code to collaborative infrastructure as code `recommended-practices/part3.3`
+  - Part 3.4: Advanced workflow improvements `recommended-practices/part3.4`
+- Changelog `changelog`
+- ---
+- **REFERENCE**
+- 📁 API
+  - API docs template `api-docs/_template`
+  - Overview `api-docs`
+  - Account `api-docs/account`
+  - Agent pools `api-docs/agents`
+  - Agent tokens `api-docs/agent-tokens`
+  - Applies `api-docs/applies`
+  - Audit trails `api-docs/audit-trails`
+  - Audit trails tokens `api-docs/audit-trails-tokens`
+  - Assessment results `api-docs/assessment-results`
+  - Change requests `api-docs/change-requests`
+  - Comments `api-docs/comments`
+  - Configuration versions `api-docs/configuration-versions`
+  - Cost estimates `api-docs/cost-estimates`
+  - Explorer `api-docs/explorer`
+  - Feature sets `api-docs/feature-sets`
+  - GitHub app installations `api-docs/github-app-installations`
+  - 📁 Hold your own key
+    - Configurations `api-docs/hold-your-own-key/configurations`
+    - Key versions `api-docs/hold-your-own-key/key-versions`
+    - Encrypted data keys `api-docs/hold-your-own-key/encrypted-data-keys`
+    - 📁 OIDC configurations
+      - Vault `api-docs/hold-your-own-key/oidc-configurations/vault`
+      - AWS `api-docs/hold-your-own-key/oidc-configurations/aws`
+      - Azure `api-docs/hold-your-own-key/oidc-configurations/azure`
+      - GCP `api-docs/hold-your-own-key/oidc-configurations/gcp`
+  - Invoices `api-docs/invoices`
+  - IP allowlists `api-docs/cidr-range-lists`
+  - IP ranges `api-docs/ip-ranges`
+  - Metrics service tokens `api-docs/metrics-service-tokens`
+  - No-code provisioning `api-docs/no-code-provisioning`
+  - 📁 Notification configurations
+    - Overview `api-docs/notification-configurations`
+    - Workspace `api-docs/notification-configurations/workspace`
+    - Project `api-docs/notification-configurations/project`
+    - Team `api-docs/notification-configurations/team`
+  - OAuth clients `api-docs/oauth-clients`
+  - OAuth tokens `api-docs/oauth-tokens`
+  - Organizations `api-docs/organizations`
+  - Organization memberships `api-docs/organization-memberships`
+  - Organization tags `api-docs/organization-tags`
+  - Organization tokens `api-docs/organization-tokens`
+  - Plan exports `api-docs/plan-exports`
+  - Plans `api-docs/plans`
+  - Policies `api-docs/policies`
+  - Policy checks `api-docs/policy-checks`
+  - Policy evaluations `api-docs/policy-evaluations`
+  - Policy sets `api-docs/policy-sets`
+  - Policy set parameters `api-docs/policy-set-params`
+  - 📁 Private registry
+    - Overview `api-docs/private-registry`
+    - 📁 Modules
+      - Registry modules `api-docs/private-registry/modules`
+      - Manage versions `api-docs/private-registry/modules/versions`
+      - Tests `api-docs/private-registry/modules/tests`
+      - Test configuration `api-docs/private-registry/modules/test-configuration`
+    - 📁 Providers
+      - Registry providers `api-docs/private-registry/providers`
+      - Versions and platforms `api-docs/private-registry/providers/versions-platforms`
+      - Manage version tags `api-docs/private-registry/providers/version-tags`
+      - GPG keys `api-docs/private-registry/providers/gpg-keys`
+    - 📁 Stacks component configurations
+      - Registry components `api-docs/private-registry/stack-components`
+      - Manage versions `api-docs/private-registry/stack-components/versions`
+    - Bulk tagging `api-docs/private-registry/bulk-tagging`
+  - Projects `api-docs/projects`
+  - Project team access `api-docs/project-team-access`
+  - Queries `api-docs/queries`
+  - Reserved tag keys `api-docs/reserved-tag-keys`
+  - Runs `api-docs/run`
+  - Run triggers `api-docs/run-triggers`
+  - SSH keys `api-docs/ssh-keys`
+  - State versions `api-docs/state-versions`
+  - State version outputs `api-docs/state-version-outputs`
+  - Subscriptions `api-docs/subscriptions`
+  - 📁 Stacks
+    - Manage Stacks `api-docs/stacks`
+    - Configurations `api-docs/stacks/configurations`
+    - Deployments `api-docs/stacks/deployments`
+    - State `api-docs/stacks/states`
+  - 📁 Tasks
+    - Tasks `api-docs/tasks/tasks`
+    - Task configurations `api-docs/tasks/task-configs`
+    - Stages and results `api-docs/tasks/task-stages-and-results`
+    - Run tasks integration `api-docs/tasks/run-tasks-integration`
+  - Team membership `api-docs/team-members`
+  - Group member roles `api-docs/group-member-roles`
+  - Team tokens `api-docs/team-tokens`
+  - Teams `api-docs/teams`
+  - Terraform actions `api-docs/terraform-actions`
+  - User tokens `api-docs/user-tokens`
+  - Users `api-docs/users`
+  - Variables `api-docs/variables`
+  - Variable sets `api-docs/variable-sets`
+  - VCS events `api-docs/vcs-events`
+  - Workspaces `api-docs/workspaces`
+  - Workspace-specific variables `api-docs/workspace-variables`
+  - Workspace team access `api-docs/team-access`
+  - Workspace resources `api-docs/workspace-resources`
+  - Changelog `api-docs/changelog`
+  - Stability policy `api-docs/stability-policy`
+- 📁 System architecture
+  - Overview `architectural-details`
+  - IP ranges `architectural-details/ip-ranges`
+  - Data security `architectural-details/data-security`
+  - Security model `architectural-details/security-model`
+- ---
+- HCP Terraform agents _(internal → `agents`: /cloud-docs/agents)_
+
+</details>
+
+## plugin
+
+- origin: `origin/terraform-docs-common/docs/plugin`
+- content: `src/content/plugin`
+- nav-data: `origin/terraform-docs-common/data/plugin-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- **Plugin Development**
+- Overview `(index)`
+- How Terraform Works With Plugins `how-terraform-works`
+- Terraform Plugin Protocol `terraform-plugin-protocol`
+- Framework Benefits `framework-benefits`
+- Publishing to the Registry _(external: /registry/providers/publishing)_
+- Terraform Integration Program _(external: /docs/partnerships)_
+- Debugging `debugging`
+- 📁 Best Practices
+  - Overview `best-practices`
+  - Interacting with Providers `best-practices/interacting-with-providers`
+  - Provider Design Principles `best-practices/hashicorp-provider-design-principles`
+  - Provider Code `best-practices/provider-code`
+  - Naming `best-practices/naming`
+  - Versioning and Changelog `best-practices/versioning`
+  - Handling Sensitive Data `best-practices/sensitive-state`
+- **Plugin SDKs and Libraries**
+- SDKv2 _(external: sdkv2)_
+- Framework _(external: framework)_
+- Logging _(external: log)_
+- Combining and Translating _(external: mux)_
+- Testing _(external: testing)_
+- 📁 Code Generation
+  - Overview `code-generation`
+  - Design `code-generation/design`
+  - Specification `code-generation/specification`
+  - OpenAPI Provider Spec Generator `code-generation/openapi-generator`
+  - Framework Code Generator `code-generation/framework-generator`
+  - Workflow Example `code-generation/workflow-example`
+
+</details>
+
+## registry
+
+- origin: `origin/terraform-docs-common/docs/registry`
+- content: `src/content/registry`
+- nav-data: `origin/terraform-docs-common/data/registry-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- **Registry Publishing**
+- Overview `(index)`
+- 📁 Providers
+  - Overview `providers`
+  - Publishing Providers `providers/publishing`
+  - Documenting Providers `providers/docs`
+  - Recommended OS and Architecture `providers/os-arch`
+  - Terraform Integration Program _(external: /docs/partnerships)_
+- 📁 Modules
+  - Finding and Using Modules `modules/use`
+  - Publishing Modules `modules/publish`
+  - Partner Modules `modules/partner`
+- 📁 Policy Libraries
+  - Publishing Policy Libraries `policy-libraries/publishing`
+  - Using Policies From Libraries `policy-libraries/using-policies`
+- Run Tasks `run-tasks`
+- Private Registries `private`
+- Registry API `api-docs`
+- Publishing FAQ `faq`
+
+</details>
+
+## terraform-enterprise
+
+- origin: `origin/terraform-enterprise/docs/enterprise`
+- content: `src/content/terraform-enterprise`
+- nav-data: `origin/terraform-enterprise/data/enterprise-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- **Terraform Enterprise**
+- Overview `(index)`
+- 📁 API
+  - API Docs template `api-docs/_template`
+  - Overview `api-docs`
+  - Account `api-docs/account`
+  - 📁 Admin
+    - Overview `api-docs/admin`
+    - Registry Sharing `api-docs/admin/registry-sharing`
+    - Module Sharing `api-docs/admin/module-sharing`
+    - Organizations `api-docs/admin/organizations`
+    - Runs `api-docs/admin/runs`
+    - Settings `api-docs/admin/settings`
+    - Terraform Versions `api-docs/admin/terraform-versions`
+    - OPA Versions `api-docs/admin/opa-versions`
+    - Sentinel Versions `api-docs/admin/sentinel-versions`
+    - Users `api-docs/admin/users`
+    - Initial Admin User `api-docs/admin/initial-admin-user`
+    - Workspaces `api-docs/admin/workspaces`
+    - SCIM Settings `api-docs/admin/scim-settings`
+    - SCIM Tokens `api-docs/admin/scim-tokens`
+    - SCIM Groups `api-docs/admin/scim-groups`
+    - Team SCIM Group Mapping `api-docs/admin/team-scim-group-mapping`
+  - Ping `api-docs/ping`
+  - Readiness `api-docs/readiness`
+  - Usage Bundle `api-docs/usage-bundle`
+  - Agent Pools `api-docs/agents`
+  - Agent Tokens `api-docs/agent-tokens`
+  - Applies `api-docs/applies`
+  - Assessment Results `api-docs/assessment-results`
+  - Change requests `api-docs/change-requests`
+  - Comments `api-docs/comments`
+  - Configuration Versions `api-docs/configuration-versions`
+  - Cost Estimates `api-docs/cost-estimates`
+  - Data Retention Policies `api-docs/data-retention-policies`
+  - Diagnostics `api-docs/diagnostics`
+  - Explorer `api-docs/explorer`
+  - GitHub App Installations `api-docs/github-app-installations`
+  - IP allowlist `api-docs/cidr-range-lists`
+  - Nodes `api-docs/nodes`
+  - 📁 Notification Configurations
+    - Overview `api-docs/notification-configurations`
+    - Project `api-docs/notification-configurations/project`
+    - Team `api-docs/notification-configurations/team`
+    - Workspace `api-docs/notification-configurations/workspace`
+  - No-Code Provisioning `api-docs/no-code-provisioning`
+  - OAuth Clients `api-docs/oauth-clients`
+  - OAuth Tokens `api-docs/oauth-tokens`
+  - Organizations `api-docs/organizations`
+  - Organization Memberships `api-docs/organization-memberships`
+  - Organization Tags `api-docs/organization-tags`
+  - Organization Tokens `api-docs/organization-tokens`
+  - Plan Exports `api-docs/plan-exports`
+  - Plans `api-docs/plans`
+  - Policies `api-docs/policies`
+  - Policy Checks `api-docs/policy-checks`
+  - Policy Evaluations `api-docs/policy-evaluations`
+  - Policy Sets `api-docs/policy-sets`
+  - Policy Set Parameters `api-docs/policy-set-params`
+  - 📁 Private Registry
+    - Modules `api-docs/private-registry/modules`
+    - Manage Module Versions `api-docs/private-registry/manage-module-versions`
+    - Providers `api-docs/private-registry/providers`
+    - Private Provider Versions and Platforms `api-docs/private-registry/provider-versions-platforms`
+    - GPG Keys `api-docs/private-registry/gpg-keys`
+    - Tests `api-docs/private-registry/tests`
+    - Test configuration `api-docs/private-registry/test-configuration`
+  - Projects `api-docs/projects`
+  - Project Team Access `api-docs/project-team-access`
+  - Reserved Tag Keys `api-docs/reserved-tag-keys`
+  - Runs `api-docs/run`
+  - 📁 Run Tasks
+    - Run Tasks `api-docs/run-tasks/run-tasks`
+    - Stages and Results `api-docs/run-tasks/run-task-stages-and-results`
+    - Custom Integration `api-docs/run-tasks/run-tasks-integration`
+  - Run Triggers `api-docs/run-triggers`
+  - 📁 SCIM
+    - Overview `api-docs/scim`
+    - Users `api-docs/scim/users`
+    - Groups `api-docs/scim/groups`
+  - SSH Keys `api-docs/ssh-keys`
+  - 📁 Stacks
+    - Overview `api-docs/stacks`
+    - Configurations `api-docs/stacks/configurations`
+    - Deployments `api-docs/stacks/deployments`
+    - States `api-docs/stacks/states`
+  - State Versions `api-docs/state-versions`
+  - State Version Outputs `api-docs/state-version-outputs`
+  - Support Bundles `api-docs/support-bundle`
+  - Team Access `api-docs/team-access`
+  - Team Membership `api-docs/team-members`
+  - Team Tokens `api-docs/team-tokens`
+  - Teams `api-docs/teams`
+  - User Tokens `api-docs/user-tokens`
+  - Users `api-docs/users`
+  - Variables `api-docs/variables`
+  - VCS Events `api-docs/vcs-events`
+  - Workspaces `api-docs/workspaces`
+  - Workspace-Specific Variables `api-docs/workspace-variables`
+  - Workspace Resources `api-docs/workspace-resources`
+  - Workspace Transfers `api-docs/workspace-transfers`
+  - Variable Sets `api-docs/variable-sets`
+  - Changelog `api-docs/changelog`
+  - Stability Policy `api-docs/stability-policy`
+- 📁 Deploy Terraform Enterprise
+  - Overview `deploy`
+  - System requirements _(external: https://www.ibm.com/software/reports/compatibility/clarity/index.html?name=IBM%20Terraform%20Self-Managed)_
+  - Migrate to a non-Replicated runtime `deploy/replicated-migration`
+  - Prepare host environment `deploy/prepare-host`
+  - 📁 Create deployment configuration
+    - Overview `deploy/configuration`
+    - Configure a license `deploy/configuration/license`
+    - Configure network access `deploy/configuration/network`
+    - Configure admin console `deploy/configuration/admin-console`
+    - 📁 Configure data storage
+      - Overview `deploy/configuration/storage`
+      - Configure operational mode `deploy/configuration/storage/configure-mode`
+      - Configure object storage `deploy/configuration/storage/connect-object`
+      - 📁 Configure database connection
+        - Overview `deploy/configuration/storage/connect-database`
+        - Connect to PostgreSQL `deploy/configuration/storage/connect-database/postgres`
+        - Connect to a PostgreSQL cluster BETA `deploy/configuration/storage/connect-database/postgres-cluster`
+        - Connect to a PostgreSQL cluster deployed with Patroni BETA `deploy/configuration/storage/connect-database/patroni`
+        - Connect to a PostgreSQL cluster deployed with Aurora BETA `deploy/configuration/storage/connect-database/aurora`
+        - Measure database failover resilience BETA `deploy/configuration/storage/connect-database/failover-resilience`
+      - Configure Redis connection `deploy/configuration/storage/connect-redis`
+      - Configure external Vault connection `deploy/configuration/storage/connect-vault`
+    - Enable Explorer `deploy/configuration/enable-explorer`
+  - Deploy to Nomad `deploy/nomad`
+  - 📁 Deploy to Kubernetes
+    - Install Terraform Enterprise `deploy/kubernetes`
+    - 📁 Scale up your Kubernetes deployment
+      - Overview `deploy/kubernetes/scale`
+      - Increase replicas `deploy/kubernetes/scale/replicas`
+      - Increase run capacity `deploy/kubernetes/scale/run-capacity`
+  - Deploy to OpenShift `deploy/openshift`
+  - Deploy to Podman `deploy/podman`
+  - 📁 Deploy to Docker
+    - Install Terraform Enterprise `deploy/docker`
+    - Scale up your Docker deployment `deploy/docker/scale`
+  - Create initial admin user `deploy/initial-admin-user`
+  - Create a custom worker image `deploy/custom-image`
+  - 📁 Manage deployment
+    - Overview `deploy/manage`
+    - Connect to Terraform Enterprise CLI `deploy/manage/access-cli`
+    - Access the admin console `deploy/manage/access-admin-console`
+    - Backup and restore `deploy/manage/backup-restore`
+    - Database failover `deploy/manage/failover`
+    - 📁 Upgrade
+      - Overview `deploy/manage/upgrade`
+      - Pre-upgrade checks `deploy/manage/upgrade/pre-checks`
+    - 📁 Monitor _(no matching folder)_
+      - Overview `deploy/manage/monitor`
+      - Enable logs `deploy/manage/monitor/logs`
+      - Enable metrics collection `deploy/manage/monitor/metrics`
+      - Readiness endpoint `api-docs/readiness`
+    - 📁 Generate product usage reports
+      - Overview `deploy/manage/product-report`
+      - Automated product usage reports `deploy/manage/product-report/automated`
+      - Manual product usage reports `deploy/manage/product-report/manual`
+    - Enable automated license utilization reports `deploy/manage/license-report`
+  - 📁 Reference
+    - Configuration `deploy/reference/configuration`
+    - CLI `deploy/reference/cli`
+    - Startup checks `deploy/reference/startup-checks`
+    - Container metrics `deploy/reference/metrics`
+    - Application services `deploy/reference/services`
+    - Data security `deploy/reference/data-security`
+    - Application security `deploy/reference/application-security`
+    - License usage data `deploy/reference/license-data`
+    - Product usage data `deploy/reference/product-data`
+  - 📁 Troubleshoot
+    - Overview `deploy/troubleshoot`
+    - Contact support `deploy/troubleshoot/contact-support`
+    - Perform diagnostics `deploy/troubleshoot/perform-diagnostics`
+    - Error messages `deploy/troubleshoot/error-messages`
+- Migrating to Terraform Enterprise `migrate`
+- 📁 Application Administration
+  - Overview `application-administration`
+  - Access the Admin Interface `application-administration/admin-access`
+  - General Settings `application-administration/general`
+  - Customize the UI `application-administration/customization`
+  - Integration Settings `application-administration/integration`
+  - OPA Tool Version Settings `application-administration/opa-tool-versions`
+  - Sentinel Tool Version Settings `application-administration/sentinel-tool-versions`
+  - GitHub App Integration `application-administration/github-app-integration`
+  - Manage Accounts and Resources `application-administration/resources`
+  - Share Registry Artifacts `application-administration/registry-sharing`
+  - Agents on Terraform Enterprise `application-administration/agents-on-tfe`
+- 📁 Manage access and organizations
+  - Users `users-teams-organizations/users`
+  - 📁 Teams
+    - Overview `users-teams-organizations/teams`
+    - Manage teams `users-teams-organizations/teams/manage`
+    - Notifications `users-teams-organizations/teams/notifications`
+  - 📁 Organizations
+    - Overview `users-teams-organizations/organizations`
+    - Settings `users-teams-organizations/organizations/settings`
+    - Manage reserved tag keys `users-teams-organizations/organizations/manage-reserved-tags`
+    - VCS status checks `users-teams-organizations/organizations/vcs-status-checks`
+    - Automatically cancel plan-only runs `users-teams-organizations/organizations/vcs-speculative-plan-management`
+  - 📁 Set permissions
+    - Overview `users-teams-organizations/permissions`
+    - Set permissions `users-teams-organizations/permissions/set-permissions`
+    - Organization permissions `users-teams-organizations/permissions/organization`
+    - Project permissions `users-teams-organizations/permissions/project`
+    - Workspace permissions `users-teams-organizations/permissions/workspace`
+  - Two-factor Authentication `users-teams-organizations/2fa`
+  - API Tokens `users-teams-organizations/api-tokens`
+  - IP allowlists `users-teams-organizations/ip-allowlists`
+- 📁 SAML SSO
+  - Configuration `saml/configuration`
+  - Team Membership `saml/team-membership`
+  - Attributes `saml/attributes`
+  - Login `saml/login`
+  - 📁 Identity Providers
+    - Sample Auth Request `saml/idp-configuration`
+    - ADFS `saml/idp-configuration/adfs`
+    - Azure Active Directory `saml/idp-configuration/aad`
+    - Okta `saml/idp-configuration/okta`
+    - OneLogin `saml/idp-configuration/onelogin`
+  - Troubleshooting `saml/troubleshooting`
+- 📁 SCIM Provisioning
+  - Overview `scim`
+  - User lifecycle `scim/users`
+  - Group management `scim/groups`
+  - 📁 Configure
+    - Overview `scim/configure`
+    - Okta `scim/configure/okta`
+    - Microsoft Entra ID `scim/configure/entra-id`
+  - 📁 Manage
+    - Overview `scim/manage`
+    - Tokens `scim/manage/tokens`
+    - Link SCIM groups to teams `scim/manage/team-mapping`
+  - Troubleshooting `scim/troubleshooting`
+- 📁 Projects
+  - Overview `projects`
+  - Managing Projects `projects/manage`
+  - Best Practices `projects/best-practices`
+- 📁 Workspaces
+  - Overview `workspaces`
+  - Create Workspaces `workspaces/create`
+  - Create tags `workspaces/tags`
+  - Browse workspaces `workspaces/browse`
+  - Explorer `workspaces/explorer`
+  - 📁 Change requests
+    - Overview `workspaces/change-requests`
+    - Manage change requests `workspaces/change-requests/manage`
+  - Terraform Configurations `workspaces/configurations`
+  - 📁 Variables
+    - Overview `variables`
+    - Managing Variables `variables/managing-variables`
+  - Health `workspaces/health`
+  - 📁 Settings
+    - Overview `workspaces/settings`
+    - VCS Connections `workspaces/settings/vcs`
+    - Access `workspaces/settings/access`
+    - Notifications `workspaces/settings/notifications`
+    - SSH Keys for Modules `workspaces/settings/ssh-keys`
+    - Run Triggers `workspaces/settings/run-triggers`
+    - Run Tasks `workspaces/settings/run-tasks`
+    - Destruction and Deletion `workspaces/settings/deletion`
+  - Terraform State `workspaces/state`
+  - JSON Filtering `workspaces/json-filtering`
+  - 📁 No-Code Provisioning
+    - Designing No-Code Ready Modules `workspaces/no-code-provisioning/module-design`
+    - Provisioning No-Code Infrastructure `workspaces/no-code-provisioning/provisioning`
+  - Import existing resources `workspaces/import`
+  - 📁 Terraform Runs
+    - Remote Operations `workspaces/run/remote-operations`
+    - Viewing and Managing Runs `workspaces/run/manage`
+    - Run States and Stages `workspaces/run/states`
+    - Run Modes and Options `workspaces/run/modes-and-options`
+    - UI/VCS-driven Runs `workspaces/run/ui`
+    - API-driven Runs `workspaces/run/api`
+    - CLI-driven Runs `workspaces/run/cli`
+    - The Run Environment `workspaces/run/run-environment`
+    - Installing Software `workspaces/run/install-software`
+  - Transfer Workspaces `workspaces/transfer`
+  - Best Practices `workspaces/best-practices`
+- 📁 Stacks
+  - Overview `stacks`
+  - 📁 Manage a Stack
+    - Create a Stack `stacks/create`
+    - Configure a Stack `stacks/configure`
+    - Destroy a Stack `stacks/destroy`
+  - State `stacks/state`
+  - Runs `stacks/runs`
+  - 📁 Deploy infrastructure
+    - Configuration versions `stacks/deploy/configuration-versions`
+    - Review deployment runs `stacks/deploy/runs`
+- 📁 Connect to VCS
+  - Overview `vcs`
+  - GitHub.com (OAuth) `vcs/github`
+  - GitHub Enterprise `vcs/github-enterprise`
+  - GitLab.com `vcs/gitlab-com`
+  - GitLab EE and CE `vcs/gitlab-eece`
+  - Bitbucket Cloud `vcs/bitbucket-cloud`
+  - Bitbucket Data Center `vcs/bitbucket-data-center`
+  - Azure DevOps Services `vcs/azure-devops-services`
+  - Azure DevOps Services (PAT) `vcs/azure-devops-services-pat`
+  - Azure DevOps Server `vcs/azure-devops-server`
+  - Troubleshooting `vcs/troubleshooting`
+- 📁 Dynamic Provider Credentials
+  - Overview `dynamic-provider-credentials`
+  - Workload Identity Tokens `dynamic-provider-credentials/workload-identity-tokens`
+  - Vault Configuration `dynamic-provider-credentials/vault-configuration`
+  - 📁 AWS Configuration
+    - Overview `dynamic-provider-credentials/aws-configuration`
+    - Quick setup `dynamic-provider-credentials/aws-configuration/quick-setup`
+  - GCP Configuration `dynamic-provider-credentials/gcp-configuration`
+  - Azure Configuration `dynamic-provider-credentials/azure-configuration`
+  - Kubernetes Configuration `dynamic-provider-credentials/kubernetes-configuration`
+  - HCP Configuration `dynamic-provider-credentials/hcp-configuration`
+  - Manually Generating Workload Identity Tokens `dynamic-provider-credentials/manual-generation`
+  - Specifying Multiple Configurations `dynamic-provider-credentials/specifying-multiple-configurations`
+  - 📁 Vault-Backed Dynamic Credentials
+    - Overview `dynamic-provider-credentials/vault-backed`
+    - AWS Configuration `dynamic-provider-credentials/vault-backed/aws-configuration`
+    - GCP Configuration `dynamic-provider-credentials/vault-backed/gcp-configuration`
+    - Azure Configuration `dynamic-provider-credentials/vault-backed/azure-configuration`
+- 📁 Private Registry
+  - Overview `registry`
+  - Adding Public Providers and Modules `registry/add`
+  - Publishing Private Providers `registry/publish-providers`
+  - Public Providers in an Airgapped Installation `registry/airgapped-providers`
+  - Publishing Private Modules `registry/publish-modules`
+  - Manage module versions `registry/manage/module-versions`
+  - Test-Integrated Modules `registry/test`
+  - Using Providers and Modules `registry/using`
+  - Configuration Designer `registry/design`
+- 📁 Policy enforcement
+  - Overview `workspaces/policy-enforcement`
+  - 📁 Define policies
+    - Overview `workspaces/policy-enforcement/define-policies`
+    - Custom Sentinel policies `workspaces/policy-enforcement/define-policies/custom-sentinel`
+    - OPA policies `workspaces/policy-enforcement/define-policies/opa`
+  - 📁 Create and manage policy sets
+    - Overview `workspaces/policy-enforcement/manage-policy-sets`
+    - Create Sentinel policy sets in VCS `workspaces/policy-enforcement/manage-policy-sets/sentinel-vcs`
+    - Connect to OPA policies in VCS `workspaces/policy-enforcement/manage-policy-sets/opa-vcs`
+    - Configure policy set connection `workspaces/policy-enforcement/manage-policy-sets/configure`
+  - Run pre-written Sentinel policies `workspaces/policy-enforcement/prewritten-sentinel`
+  - Test Sentinel policies `workspaces/policy-enforcement/test-sentinel`
+  - 📁 View policy results
+    - Overview `workspaces/policy-enforcement/view-results`
+    - View Sentinel JSON results `workspaces/policy-enforcement/view-results/json`
+  - Pre-written policy library `workspaces/policy-enforcement/prewritten-library`
+  - 📁 Sentinel import reference
+    - Overview `workspaces/policy-enforcement/import-reference`
+    - tfconfig `workspaces/policy-enforcement/import-reference/tfconfig`
+    - tfconfig/v2 `workspaces/policy-enforcement/import-reference/tfconfig-v2`
+    - tfplan `workspaces/policy-enforcement/import-reference/tfplan`
+    - tfplan/v2 `workspaces/policy-enforcement/import-reference/tfplan-v2`
+    - tfstate `workspaces/policy-enforcement/import-reference/tfstate`
+    - tfstate/v2 `workspaces/policy-enforcement/import-reference/tfstate-v2`
+    - tfrun `workspaces/policy-enforcement/import-reference/tfrun`
+- 📁 Cost Estimation
+  - Overview `cost-estimation`
+  - AWS `cost-estimation/aws`
+  - GCP `cost-estimation/gcp`
+  - Azure `cost-estimation/azure`
+- 📁 Integrations
+  - Overview `integrations`
+  - 📁 Kubernetes Operator
+    - Overview `integrations/kubernetes`
+    - Setup `integrations/kubernetes/setup`
+    - API Reference `integrations/kubernetes/api-reference`
+    - Annotations and Labels `integrations/kubernetes/annotations-and-labels`
+    - Migration Guide `integrations/kubernetes/ops-v2-migration`
+  - 📁 ServiceNow Integrations
+    - 📁 Service Catalog for Terraform
+      - Overview `integrations/service-now/service-catalog-terraform`
+      - Service Catalog `integrations/service-now/service-catalog-terraform/service-catalog-config`
+      - Admin Guide `integrations/service-now/service-catalog-terraform/admin-guide`
+      - Developer Reference `integrations/service-now/service-catalog-terraform/developer-reference`
+      - Example Customizations `integrations/service-now/service-catalog-terraform/example-customizations`
+      - Troubleshoot `integrations/service-now/service-catalog-terraform/troubleshoot`
+    - 📁 Service Graph Connector for Terraform
+      - Overview `integrations/service-now/service-graph`
+      - Setup `integrations/service-now/service-graph/service-graph-setup`
+      - 📁 Resource Coverage
+        - Overview `integrations/service-now/service-graph/resource-coverage`
+        - AWS `integrations/service-now/service-graph/resource-coverage/aws`
+        - Azure `integrations/service-now/service-graph/resource-coverage/azure`
+        - GCP `integrations/service-now/service-graph/resource-coverage/gcp`
+        - vSphere `integrations/service-now/service-graph/resource-coverage/vsphere`
+      - Customizations `integrations/service-now/service-graph/customizations`
+  - Run Tasks Integration `integrations/run-tasks`
+  - AWS Service Catalog Integration `integrations/aws-service-catalog`
+- 📁 Releases
+  - Overview `releases`
+  - 2.0.x `releases/2.0.x`
+  - 1.2.x `releases/1.2.x`
+  - 1.1.x `releases/1.1.x`
+  - 1.0.x `releases/1.0.x`
+  - 📁 2025
+    - Overview `releases/2025`
+    - v202507-1 `releases/2025/v202507-1`
+    - v202506-1 `releases/2025/v202506-1`
+    - v202505-1 `releases/2025/v202505-1`
+    - v202504-1 `releases/2025/v202504-1`
+    - v202503-1 `releases/2025/v202503-1`
+    - v202502-2 `releases/2025/v202502-2`
+    - v202502-1 `releases/2025/v202502-1`
+    - v202501-1 `releases/2025/v202501-1`
+  - 📁 2024
+    - Overview `releases/2024`
+    - v202411-2 `releases/2024/v202411-2`
+    - v202411-1 `releases/2024/v202411-1`
+    - v202410-1 `releases/2024/v202410-1`
+    - v202409-3 `releases/2024/v202409-3`
+    - v202409-2 `releases/2024/v202409-2`
+    - v202409-1 `releases/2024/v202409-1`
+    - v202408-1 `releases/2024/v202408-1`
+    - v202407-1 `releases/2024/v202407-1`
+    - v202406-1 `releases/2024/v202406-1`
+    - v202405-1 `releases/2024/v202405-1`
+    - v202404-2 `releases/2024/v202404-2`
+    - v202404-1 `releases/2024/v202404-1`
+    - v202402-2 `releases/2024/v202402-2`
+    - v202402-1 `releases/2024/v202402-1`
+    - v202401-2 `releases/2024/v202401-2`
+    - v202401-1 `releases/2024/v202401-1`
+  - 📁 2023
+    - Overview `releases/2023`
+    - v202312-1 `releases/2023/v202312-1`
+    - v202311-1 `releases/2023/v202311-1`
+    - v202310-1 `releases/2023/v202310-1`
+    - v202309-1 `releases/2023/v202309-1`
+    - v202308-1 `releases/2023/v202308-1`
+    - v202307-1 `releases/2023/v202307-1`
+    - v202306-1 `releases/2023/v202306-1`
+    - v202305-2 `releases/2023/v202305-2`
+    - v202305-1 `releases/2023/v202305-1`
+    - v202304-1 `releases/2023/v202304-1`
+    - v202303-1 `releases/2023/v202303-1`
+    - v202302-1 `releases/2023/v202302-1`
+    - v202301-2 `releases/2023/v202301-2`
+    - v202301-1 `releases/2023/v202301-1`
+  - 📁 2022
+    - Overview `releases/2022`
+    - v202212-2 `releases/2022/v202212-2`
+    - v202212-1 `releases/2022/v202212-1`
+    - v202211-1 `releases/2022/v202211-1`
+    - v202210-1 `releases/2022/v202210-1`
+    - v202209-2 `releases/2022/v202209-2`
+    - v202209-1 `releases/2022/v202209-1`
+    - v202208-3 `releases/2022/v202208-3`
+    - v202208-2 `releases/2022/v202208-2`
+    - v202208-1 `releases/2022/v202208-1`
+    - v202207-2 `releases/2022/v202207-2`
+    - v202207-1 `releases/2022/v202207-1`
+    - v202206-1 `releases/2022/v202206-1`
+    - v202205-1 `releases/2022/v202205-1`
+    - v202204-2 `releases/2022/v202204-2`
+    - v202204-1 `releases/2022/v202204-1`
+    - v202203-1 `releases/2022/v202203-1`
+    - v202202-1 `releases/2022/v202202-1`
+    - v202201-2 `releases/2022/v202201-2`
+    - v202201-1 `releases/2022/v202201-1`
+  - 📁 2021
+    - Overview `releases/2021`
+    - v202112-2 `releases/2021/v202112-2`
+    - v202112-1 `releases/2021/v202112-1`
+    - v202111-1 `releases/2021/v202111-1`
+    - v202110-1 `releases/2021/v202110-1`
+    - v202109-2 `releases/2021/v202109-2`
+    - v202109-1 `releases/2021/v202109-1`
+    - v202108-1 `releases/2021/v202108-1`
+    - v202107-1 `releases/2021/v202107-1`
+    - v202106-1 `releases/2021/v202106-1`
+    - v202105-1 `releases/2021/v202105-1`
+    - v202104-1 `releases/2021/v202104-1`
+    - v202103-3 `releases/2021/v202103-3`
+    - v202103-2 `releases/2021/v202103-2`
+    - v202103-1 `releases/2021/v202103-1`
+    - v202102-2 `releases/2021/v202102-2`
+    - v202102-1 `releases/2021/v202102-1`
+    - v202101-1 `releases/2021/v202101-1`
+  - 📁 Archived
+    - 📁 2020
+      - Overview `releases/2020`
+    - 📁 2019
+      - Overview `releases/2019`
+    - 📁 2018
+      - Overview `releases/2018`
+- ---
+- HCP Terraform Agents _(external: /cloud-docs/agents)_
+
+</details>
+
+## terraform-mcp-server
+
+- origin: `origin/terraform-mcp-server/docs/mcp-server`
+- content: `src/content/terraform-mcp-server`
+- nav-data: `origin/terraform-mcp-server/data/mcp-server-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- **Terraform MCP Server**
+- Overview `(index)`
+- 📁 Deploy
+  - Overview `deploy`
+  - Local `deploy/local`
+  - Remote `deploy/remote`
+- Prompt `prompt`
+- Security `security`
+- Reference `reference`
+
+</details>
+
+## terraform-migrate
+
+- origin: `origin/terraform-migrate/docs/migrate`
+- content: `src/content/terraform-migrate`
+- nav-data: `origin/terraform-migrate/data/migrate-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- **Migrate to HCP Terraform**
+- Overview `(index)`
+- Install `install`
+- Authenticate `authenticate`
+- Migrate to Stacks `stacks`
+- 📁 Reference
+  - 📁 CLI
+    - tf-migrate prepare `reference/cli/prepare`
+    - tf-migrate execute `reference/cli/execute`
+    - 📁 modules
+      - tf-migrate modules create `reference/cli/modules/create`
+    - 📁 stacks
+      - tf-migrate stacks prepare `reference/cli/stacks/prepare`
+      - tf-migrate stacks execute `reference/cli/stacks/execute`
+      - tf-migrate stacks cleanup `reference/cli/stacks/cleanup`
+  - Configuration file reference `reference/configuration`
+- 📁 Release notes
+  - v2.0 `releases/v2_0`
+
+</details>
+
+## terraform-policy
+
+- origin: `origin/terraform-policy/docs/policy`
+- content: `src/content/terraform-policy`
+- nav-data: `origin/terraform-policy/data/policy-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- **Terraform Policy**
+- Overview `(index)`
+- Install `install`
+- Set up your project `write`
+- Write policies `write/policies`
+- Test policies `write/tests`
+- Write plugins `write/plugins`
+- Examples `write/examples`
+- Compare policy frameworks `compare`
+- 📁 Reference
+  - Overview `reference`
+  - 📁 CLI
+    - Overview `reference/cli`
+    - tfpolicy test `reference/cli/test`
+    - tfpolicy validate `reference/cli/validate`
+    - tfpolicy version `reference/cli/version`
+  - 📁 Policy Configuration
+    - Overview `reference/policy`
+    - policy `reference/policy/policy`
+    - provider_policy `reference/policy/provider-policy`
+    - resource_policy `reference/policy/resource-policy`
+    - module_policy `reference/policy/module-policy`
+    - input `reference/policy/input`
+    - locals `reference/policy/locals`
+  - 📁 Test Configuration
+    - Overview `reference/test`
+    - policytest `reference/test/policytest`
+    - provider `reference/test/provider`
+    - resource `reference/test/resource`
+    - data `reference/test/data`
+    - module `reference/test/module`
+    - inputs `reference/test/inputs`
+    - locals `reference/test/locals`
+  - Operators `reference/operators`
+  - 📁 Functions
+    - Overview `reference/functions`
+    - core::getresources `reference/functions/getresources`
+    - core::getdatasource `reference/functions/getdatasource`
+    - core::gethttprequest `reference/functions/gethttprequest`
+    - core::semverconstraint `reference/functions/semverconstraint`
+
+</details>
+
+## cdktf
+
+- origin: `origin/terraform-cdk/docs/cdktf`
+- content: `src/content/cdktf`
+- nav-data: `origin/terraform-cdk/data/cdktf-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- **CDK for Terraform**
+- Overview `(index)`
+- 📁 Concepts
+  - Architecture `concepts/cdktf-architecture`
+  - HCL Interoperability `concepts/hcl-interoperability`
+  - Constructs `concepts/constructs`
+  - Providers `concepts/providers`
+  - Resources `concepts/resources`
+  - Modules `concepts/modules`
+  - Data Sources `concepts/data-sources`
+  - Variables and Outputs `concepts/variables-and-outputs`
+  - Functions `concepts/functions`
+  - Iterators `concepts/iterators`
+  - Remote Backends `concepts/remote-backends`
+  - Aspects `concepts/aspects`
+  - Assets `concepts/assets`
+  - Tokens `concepts/tokens`
+  - Stacks `concepts/stacks`
+- 📁 Examples and Guides
+  - Examples `examples-and-guides/examples`
+  - Refactoring Stacks `examples-and-guides/refactoring`
+- 📁 Create and Deploy Applications
+  - Project Setup `create-and-deploy/project-setup`
+  - Configuration File `create-and-deploy/configuration-file`
+  - Best Practices `create-and-deploy/best-practices`
+  - Environment Variables `create-and-deploy/environment-variables`
+  - HCP Terraform `create-and-deploy/hcp-terraform`
+  - Deployment Patterns `create-and-deploy/deployment-patterns`
+  - Performance `create-and-deploy/performance`
+  - Remote Templates `create-and-deploy/remote-templates`
+  - AWS Adapter [preview] `create-and-deploy/aws-adapter`
+- 📁 Develop Custom Constructs
+  - Design `develop-custom-constructs/construct-design`
+  - Publishing and Distribution `develop-custom-constructs/publishing-and-distribution`
+- 📁 Test and Debug
+  - Unit Tests `test/unit-tests`
+  - Debugging `test/debugging`
+- 📁 CLI Reference
+  - CLI Configuration `cli-reference/cli-configuration`
+  - Commands `cli-reference/commands`
+- 📁 API Reference
+  - Overview `api-reference`
+  - 📁 Typescript
+    - Overview `api-reference/typescript`
+    - Classes `api-reference/typescript/classes`
+    - Constructs `api-reference/typescript/constructs`
+    - Enums `api-reference/typescript/enums`
+    - Protocols `api-reference/typescript/protocols`
+    - Structs `api-reference/typescript/structs`
+  - 📁 Python
+    - Overview `api-reference/python`
+    - Classes `api-reference/python/classes`
+    - Constructs `api-reference/python/constructs`
+    - Enums `api-reference/python/enums`
+    - Protocols `api-reference/python/protocols`
+    - Structs `api-reference/python/structs`
+  - 📁 Java
+    - Overview `api-reference/java`
+    - Classes `api-reference/java/classes`
+    - Constructs `api-reference/java/constructs`
+    - Enums `api-reference/java/enums`
+    - Protocols `api-reference/java/protocols`
+    - Structs `api-reference/java/structs`
+  - 📁 C#
+    - Overview `api-reference/csharp`
+    - Classes `api-reference/csharp/classes`
+    - Constructs `api-reference/csharp/constructs`
+    - Enums `api-reference/csharp/enums`
+    - Protocols `api-reference/csharp/protocols`
+    - Structs `api-reference/csharp/structs`
+  - 📁 Go
+    - Overview `api-reference/go`
+    - Classes `api-reference/go/classes`
+    - Constructs `api-reference/go/constructs`
+    - Enums `api-reference/go/enums`
+    - Protocols `api-reference/go/protocols`
+    - Structs `api-reference/go/structs`
+  - Providers `api-reference/provider`
+- 📁 Release
+  - Overview `release`
+  - Upgrading to Version 0.19 `release/upgrade-guide-v0-19`
+  - Upgrading to Version 0.18 `release/upgrade-guide-v0-18`
+  - Upgrading to Version 0.17 `release/upgrade-guide-v0-17`
+  - Upgrading to Version 0.15 `release/upgrade-guide-v0-15`
+  - Upgrading to Version 0.13 `release/upgrade-guide-v0-13`
+  - Upgrading to Version 0.12 `release/upgrade-guide-v0-12`
+  - Upgrading to Version 0.11 `release/upgrade-guide-v0-11`
+  - Upgrading to Version 0.10 `release/upgrade-guide-v0-10`
+  - Upgrading to Version 0.9 `release/upgrade-guide-v0-9`
+  - Upgrading to Version 0.7 `release/upgrade-guide-v0-7`
+  - Upgrading to Version 0.6 `release/upgrade-guide-v0-6`
+- Community `community`
+- Telemetry `telemetry`
+
+</details>
+
+## docs
+
+- origin: `origin/terraform-docs-common/docs/docs`
+- content: `src/content/docs`
+- nav-data: `origin/terraform-docs-common/data/docs-nav-data.json`
+- section root index.mdx: ✅
+- nav-data paths with no matching origin file: ✅ none
+
+<details><summary>Full official sidebar tree</summary>
+
+- Intro to Terraform _(external: /intro)_
+- ---
+- Configuration Language _(external: /language)_
+- Terraform CLI _(external: /cli)_
+- HCP Terraform _(external: /cloud-docs)_
+- Terraform Enterprise _(external: /enterprise)_
+- CDK for Terraform _(external: /cdktf)_
+- ---
+- Provider Use _(external: /language/providers)_
+- Plugin Development _(external: /plugin)_
+- Registry Publishing _(external: /registry)_
+- ---
+- Integration Program `partnerships`
+- Terraform Tools `tools`
+- Glossary `glossary`
+
+</details>
+
+## Summary
+
+- Sections checked: 13
+- Total nav-data paths with no matching file: 1
